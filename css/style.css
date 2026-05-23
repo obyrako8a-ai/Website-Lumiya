@@ -19,19 +19,19 @@
 /* Стиль для страницы мероприятий */
 .events-page {
     background-color: #F7DE1C;
-    min-height: 100vh; /* Чтобы фон был на всю высоту экрана */
+    min-height: 100vh;
 }
-.shop-page,
+
 .index-page {
     background-color: #2B50AA;
-    min-height: 100vh; /* Чтобы фон был на всю высоту экрана */
+    min-height: 100vh; 
 }
 
 .shop-page {
     background-color: #2B50AA;
-    min-height: 100vh; /* Чтобы фон был на всю высоту экрана */
+    min-height: 100vh;
 }
 .about-page {
     background-color: #05C1F1;
-    min-height: 100vh; /* Чтобы фон был на всю высоту экрана */
+    min-height: 100vh;
 }
