@@ -6,6 +6,8 @@
   gap: 400px;
   padding: 50px 20px;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 10;
 }
 .main-nav a {
   color: #F7DE1C;
@@ -16,22 +18,89 @@
 .main-nav a:hover {
   color: #fff;
 }
-/* Стиль для страницы мероприятий */
+/* МЕРОПРИЯТИЯ */
 .events-page {
     background-color: #F7DE1C;
     min-height: 100vh;
 }
-
+/* ГЛАВНАЯ */
 .index-page {
     background-color: #2B50AA;
     min-height: 100vh; 
 }
-
+/* МАГАЗИН */
 .shop-page {
     background-color: #2B50AA;
     min-height: 100vh;
 }
-.about-page {
+/* Стили для трех прямоугольников на странице магазина */
+.shop-rectangles {
+    display: flex;
+    width: 100%;
+    height: 300px; /* Высоту можете изменить по вашему желанию */
+}
+
+.rectangle {
+    flex: 1; /* Каждый прямоугольник занимает равную ширину */
+    height: 100%;
+}
+
+.yellow {
+    background-color: #F7DE1C;
+}
+
+.blue {
     background-color: #05C1F1;
-    min-height: 100vh;
+}
+/* Стиль для ссылки корзины */
+.basket-link {
+    position: absolute;
+    right: 30px;
+    top: 25%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Стиль для иконки корзины */
+.basket-icon {
+    width: 40px;
+    height: auto;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.basket-icon:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+/* СТРАНИЦА ОШИБКА 404 */
+.error-page {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Убираем скролл, если изображение больше экрана */
+}
+
+/* Контейнер для полноэкранного изображения */
+.fullscreen-404 {
+    position: fixed;
+    top: 0;  /* ← ИСПРАВИТЬ: было 200px, станет 0 */
+    left: 0;
+    width: 100%;
+    height: 100vh;  /* ← ИСПРАВИТЬ: было calc(100vh - 48px), станет 100vh */
+    overflow: hidden;
+    background-color: #2B50AA;
+}
+
+/* Стиль для SVG изображения */
+.error-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Изображение покрывает весь контейнер, обрезаясь по краям */
+    object-position: center; /* Центрируем изображение */
+    display: block;
+    z-index: 1;
+}
+
+.error-page .main-nav {
+    margin-bottom: 0;
 }
