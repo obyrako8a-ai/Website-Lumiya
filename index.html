@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Люмия - Главная</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body class="index-page">
 <nav class="main-nav">
@@ -14,7 +15,93 @@
     <a href="shop.html">Магазин</a>
 </nav>
 
-<h1>Добро пожаловать в Люмию</h1>
+   <!-- Бегущая строка -->
+   <div class="marquee-container">
+        <div class="marquee-content" id="marqueeContent">
+            <span class="marquee-text">Люмия — фабрика по созданию уникальных игрушек.</span>
+            <span class="marquee-text">Люмия — фабрика по созданию уникальных игрушек.</span>
+            <span class="marquee-text">Люмия — фабрика по созданию уникальных игрушек.</span>
+            <span class="marquee-text">Люмия — фабрика по созданию уникальных игрушек.</span>
+        </div>
+    </div>
+    <!-- Фото лучей на всю ширину -->
+    <div class="rays-container">
+        <img src="images/rays.svg" alt="Лучи" class="rays-image">
+    </div>
+
+    <!-- Желтый прямоугольник с текстом -->
+    <div class="info-banner">
+        <div class="info-banner-left">
+            Люмия это место, где твой <br>
+            рисунок становится<br>
+            реальностью
+        </div>
+        <div class="info-banner-right">
+            Мы не штампуем,<br>
+            а зажигаем свет<br>
+            в каждой игрушке
+        </div>
+    </div>
+
+     <!-- Три прямоугольника -->
+    <div class="process-steps">
+        <!-- Розовый - ИДЕЯ -->
+        <div class="process-step pink">
+            <img src="images/idea.svg" alt="Идея" class="process-image">
+            <div class="process-label">ИДЕЯ</div>
+        </div>
+        
+        <!-- Голубой - ЭСКИЗ -->
+        <div class="process-step blue">
+            <img src="images/drawing.svg" alt="Эскиз" class="process-image">
+            <div class="process-label">ЭСКИЗ</div>
+        </div>
+        
+        <!-- Желтый - ИГРУШКА -->
+        <div class="process-step yellow">
+            <img src="images/cat.svg" alt="Игрушка" class="process-image">
+            <div class="process-label">ИГРУШКА</div>
+        </div>
+    </div>
+
+    <!-- Два прямоугольника снизу -->
+    <div class="bottom-sections">
+        <!-- Первый: Зеленый -->
+        <div class="bottom-section green">
+            <div class="section-left">
+                <div class="section-title">
+                    Узнай <br>
+                    о дружбе <br>
+                    больше
+                </div>
+                <a href="https://obyrako8a-ai.github.io/Friends/" class="section-button">
+                    <span class="button-text">Подробнее</span>
+                    <img src="images/arrow.svg" alt="arrow" class="button-arrow">
+                </a>
+            </div>
+            <div class="section-right">
+                <img src="images/icon.svg" alt="Icon" class="section-image">
+            </div>
+        </div>
+        
+        <!-- Второй: Фиолетовый -->
+        <div class="bottom-section purple">
+            <div class="section-left">
+                <div class="section-title purple-title">
+                    Собери <br>
+                    своего <br>
+                    друга
+                </div>
+                <a href="https://obyrako8a-ai.github.io/Lumiya/" class="section-button purple-button">
+                    <span class="button-text">Подробнее</span>
+                    <img src="images/arrow.svg" alt="arrow" class="button-arrow">
+                </a>
+            </div>
+            <div class="section-right">
+                <img src="images/face.svg" alt="Face" class="section-image">
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
