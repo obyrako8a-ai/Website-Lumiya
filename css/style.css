@@ -24,7 +24,7 @@ body {
     justify-content: center;
     gap: 20vw;
     padding: 5vh 5vw;
-    margin-bottom: 4vh;
+    margin-bottom: 0vh;
     position: relative;
     z-index: 10;
 }
@@ -285,12 +285,132 @@ body {
     min-width: 15vw;
 }
 
-/* МАГАЗИН */
+/* О ФАБРИКЕ */
 .about-page {
     background-color: #05C1F1;
     min-height: 100vh;
     overflow-x: hidden;
 }
+
+/* Бегущая строка на странице о фабрике - чуть меньше отступ */
+.about-page .marquee-container {
+    margin-top: 0;
+    padding: 0vh 0;
+}
+
+.about-page .marquee-text {
+    color: #2B50AA;
+    font-size: 5vw;
+}
+
+/* Блоки */
+.about-layout {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+
+/* Для второго блока - меняем порядок */
+.about-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Левая колонка - теперь строго 50% ширины */
+.about-left {
+    width: 50%; /* Фиксированная ширина 50% */
+    flex-shrink: 0; /* Запрещаем сжиматься */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* Правая колонка - тоже 50% */
+.about-right {
+    width: 50%; /* Фиксированная ширина 50% */
+    flex-shrink: 0; /* Запрещаем сжиматься */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Общие стили для фото */
+.about-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Зеленый прямоугольник */
+.about-right.green {
+    background-color: #01B37F;
+    padding: 4vw 5vw;
+}
+
+.about-title.green-title {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 4vw;
+    color: #2B50AA;
+    margin-bottom: 2vh;
+}
+
+.about-text.green-text {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 2.5vw;
+    color: #2B50AA;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Фиолетовый прямоугольник */
+.about-right.purple-bg {
+    background-color: #7A59A4;
+    padding: 4vw 5vw;
+}
+
+.about-title.purple-title {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 4vw;
+    color: #F7DE1C;
+    margin-bottom: 2vh;
+}
+
+.about-text.purple-text {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 2.5vw;
+    color: #F7DE1C;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Розовый прямоугольник */
+.about-right.pink {
+    background-color: #FF8CBD;
+    padding: 4vw 5vw;
+}
+
+.about-title.pink-title {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 4vw;
+    color: #2B50AA;
+    margin-bottom: 2vh;
+}
+
+.about-text.pink-text {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 2.5vw;
+    color: #2B50AA;
+    line-height: 1.4;
+    margin: 0;
+}
+
+
+
 /* МАГАЗИН */
 .shop-page {
     background-color: #2B50AA;
