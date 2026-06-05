@@ -16,3 +16,11 @@ function reverseMarquee() {
         }
     }
 }
+
+document.querySelector('form').addEventListener('submit', function(e) {
+  e.preventDefault(); // отменяем отправку на сервер
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+  console.log('Данные формы:', data);
+  alert('Форма собрана! Данные в консоли');
+});

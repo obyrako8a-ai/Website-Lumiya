@@ -1,16 +1,16 @@
+/* БАЗОВЫЕ СБРОСЫ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 @font-face {
   font-family: 'AlumniSans';
   src: url('../fonts/AlumniSans-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-}
-
-/* БАЗОВЫЕ СБРОСЫ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -42,11 +42,7 @@ body {
 .main-nav a:hover {
   color: #fff;
 }
-/* МЕРОПРИЯТИЯ */
-.events-page {
-    background-color: #F7DE1C;
-    min-height: 100vh;
-}
+
 /* ГЛАВНАЯ */
 .index-page {
     background-color: #2B50AA;
@@ -58,8 +54,8 @@ body {
     width: 100%;
     overflow: hidden;
     background-color: transparent;
-    padding: 10px 0;
-    margin-top: -45px;
+    padding: 1vh 0;
+    margin-top: 0;
 }
 
 .marquee-content {
@@ -145,7 +141,7 @@ body {
 .process-step {
     position: relative;
     flex: 1;
-    aspect-ratio: 1 / 0.8; /* Высота 80% от ширины */
+    aspect-ratio: 1 / 0.8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -292,10 +288,10 @@ body {
     overflow-x: hidden;
 }
 
-/* Бегущая строка на странице о фабрике - чуть меньше отступ */
+/* Бегущая строка */
 .about-page .marquee-container {
     margin-top: 0;
-    padding: 0vh 0;
+    padding: 1vh 0;
 }
 
 .about-page .marquee-text {
@@ -310,24 +306,21 @@ body {
     align-items: flex-start;
 }
 
-/* Для второго блока - меняем порядок */
 .about-layout.reverse {
     flex-direction: row-reverse;
 }
 
-/* Левая колонка - теперь строго 50% ширины */
 .about-left {
-    width: 50%; /* Фиксированная ширина 50% */
-    flex-shrink: 0; /* Запрещаем сжиматься */
+    width: 50%;
+    flex-shrink: 0; 
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
 }
 
-/* Правая колонка - тоже 50% */
 .about-right {
-    width: 50%; /* Фиксированная ширина 50% */
-    flex-shrink: 0; /* Запрещаем сжиматься */
+    width: 50%;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -408,14 +401,236 @@ body {
     line-height: 1.4;
     margin: 0;
 }
+/* Анимация переключения фото (общие стили) */
+.image-switch {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
 
+.image-switch .about-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
+/* Анимация для первого блока (house) */
+.image-switch .image-3d {
+    position: relative;
+    opacity: 1;
+    animation: fade3D 4s infinite;
+}
+
+.image-switch .image-house {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: fadeHouse 4s infinite;
+}
+
+/* Анимация для второго блока (office) */
+.image-switch .image-office-3d {
+    position: relative;
+    opacity: 1;
+    animation: fadeOffice3D 4s infinite;
+}
+
+.image-switch .image-office {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: fadeOffice 4s infinite;
+}
+
+/* Анимация для третьего блока (factory) */
+.image-switch .image-factory-3d {
+    position: relative;
+    opacity: 1;
+    animation: fadeFactory3D 4s infinite;
+}
+
+.image-switch .image-factory {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: fadeFactory 4s infinite;
+}
+
+/* Ключевые кадры для первого блока */
+@keyframes fade3D {
+    0% { opacity: 1; }
+    45% { opacity: 1; }
+    50% { opacity: 0; }
+    95% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeHouse {
+    0% { opacity: 0; }
+    45% { opacity: 0; }
+    50% { opacity: 1; }
+    95% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Ключевые кадры для второго блока */
+@keyframes fadeOffice3D {
+    0% { opacity: 1; }
+    45% { opacity: 1; }
+    50% { opacity: 0; }
+    95% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOffice {
+    0% { opacity: 0; }
+    45% { opacity: 0; }
+    50% { opacity: 1; }
+    95% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Ключевые кадры для третьего блока */
+@keyframes fadeFactory3D {
+    0% { opacity: 1; }
+    45% { opacity: 1; }
+    50% { opacity: 0; }
+    95% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeFactory {
+    0% { opacity: 0; }
+    45% { opacity: 0; }
+    50% { opacity: 1; }
+    95% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* МЕРОПРИЯТИЯ */
+.events-page {
+    background-color: #F7DE1C;
+    min-height: 100vh;
+}
+
+/* Бегущая строка */
+.events-page .marquee-container {
+    padding: 1vh 0;
+    margin-top: 0;
+    margin-bottom: 2vh;
+}
+
+.events-page .marquee-text.events-marquee {
+    color: #2B50AA;
+    font-size: 5vw;
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Блок с фото и красным прямоугольником */
+.events-layout {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+
+/* Левая колонка - фото */
+.events-left {
+    width: 57%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* Фото red_poster */
+.events-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Правая колонка - красный прямоугольник */
+.events-right.red {
+    width: 43%;
+    flex-shrink: 0;
+    background-color: #FF4431;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4.6vw 5vw;
+    min-height: 100%;
+}
+
+/* Заголовок */
+.events-title {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 4vw;
+    color: #F7DE1C;
+    line-height: 1.2;
+    margin-bottom: 2vh;
+}
+
+/* Дата */
+.events-date {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 2vw;
+    color: #F7DE1C;
+    margin-bottom: 4vh;
+}
+
+/* Кнопка */
+.events-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.events-button:hover {
+    transform: translateX(0.5vw);
+}
+
+.events-button .button-text {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 2vw;
+    color: #F7DE1C;
+}
+
+.events-button .button-arrow {
+    width: 1vw;
+    height: auto;
+}
 
 /* МАГАЗИН */
 .shop-page {
     background-color: #2B50AA;
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+/* Бегущая строка на странице магазина */
+.shop-page .marquee-container {
+    padding: 1vh 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.shop-page .marquee-text.shop-marquee {
+    color: #F7DE1C;
+    font-size: 5vw;
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 /* Стили для трех прямоугольников на странице магазина */
@@ -444,8 +659,8 @@ body {
 /* Стиль для ссылки корзины */
 .basket-link {
     position: absolute;
-    right: 3vw;
-    top: 27%;
+    right: 1.5vw;
+    top: 35%;
     transform: translateY(-50%);
     text-decoration: none;
     cursor: pointer;
@@ -466,7 +681,7 @@ body {
 
 /* Стили для карточки товара (первый желтый прямоугольник) */
 .product-card {
-     position: relative;
+    position: relative;
     text-decoration: none;
     display: block;
     overflow: hidden;
@@ -484,8 +699,8 @@ body {
     transform: translate(-50%, -50%);
     width: 60%;
     height: auto;
-    z-index: 1;  /* Нижний слой */
-    pointer-events: none; /* Чтобы фото не перехватывало клики */
+    z-index: 1;
+    pointer-events: none;
 }
 /* Надпись КНИГА внизу слева */
 .product-name {
@@ -569,7 +784,7 @@ body {
     background-color: #2B50AA;
 }
 
-/* Стиль для SVG изображения */
+/* Стиль для изображения */
 .error-image {
     width: 100%;
     height: 100%;
@@ -667,7 +882,7 @@ body {
     margin: 4vh 0;
 }
 
-/* Стиль для PNG фото - пропорциональное уменьшение */
+/* Стиль для фото  */
 .book-image {
     width: 50%;
     height: auto;
@@ -691,3 +906,97 @@ body {
     line-height: 1.6;
     margin: 0;
 }
+
+form {
+  width: 460px;
+  margin: 15px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+input, select, button {
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 400;
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #fff;
+  transition: all 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #0071e3;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,113,227,0.2);
+}
+
+button {
+  background: #0071e3;
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005bbf;
+}
+
+.names, .birthdate, .phone-group {
+  display: flex;
+  gap: 12px;
+}
+.names input, .birthdate select, .phone-group select {
+  width: calc(50% - 6px);
+}
+
+/* Вертикальная группа радиокнопок */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.radio-group label, .checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+}
+input[type="radio"], input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.placeholder-field {
+  position: relative;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.placeholder-field input {
+  width: 100%;
+  padding: 20px 12px 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 17px;
+}
+
+.placeholder-field::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 17px;
+  transition: 0.2s ease;
+  pointer-events: none;
+}
+
