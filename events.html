@@ -33,11 +33,71 @@
             <p class="events-date">10.02.26</p>
             <!-- Кнопка теперь вызывает openForm() -->
             <button class="events-button" onclick="openForm()">
-                <span class="button-text">Подробнее</span>
+                <span class="button-text">Зарегистрироваться</span>
                 <img src="images/arrow_yellow.svg" alt="arrow" class="button-arrow">
             </button>
         </div>
     </div>
+
+<!-- ВТОРОЙ БЛОК: плашка слева, фото справа -->
+<div class="events-layout reverse">
+    <div class="events-right pink">
+        <h2 class="events-title dark">МАСТЕР-КЛАСС<br>ПО СОЗДАНИЮ<br>АКСЕССУАРОВ</h2>
+        <p class="events-date dark">11.05.26</p>
+        <button class="events-button" onclick="openForm()">
+            <span class="button-text dark">Зарегистрироваться</span>
+            <img src="images/arrow_blue.svg" alt="arrow" class="button-arrow">
+        </button>
+    </div>
+    <div class="events-left">
+        <img src="images/pink_poster.png" alt="Розовый постер" class="events-image">
+    </div>
+</div>
+
+<!-- ТРЕТИЙ БЛОК: фото слева, плашка справа -->
+<div class="events-layout">
+    <div class="events-left">
+        <img src="images/purple_poster.png" alt="Фиолетовый постер" class="events-image">
+    </div>
+    <div class="events-right purple">
+        <h2 class="events-title">ДЕНЬ<br>ОТКРЫТЫХ<br>ДВЕРЕЙ</h2>
+        <p class="events-date">25.04.26</p>
+        <button class="events-button" onclick="openForm()">
+            <span class="button-text">Зарегистрироваться</span>
+            <img src="images/arrow_yellow.svg" alt="arrow" class="button-arrow">
+        </button>
+    </div>
+</div>
+
+<!-- ЧЕТВЕРТЫЙ БЛОК: плашка слева, фото справа -->
+<div class="events-layout reverse">
+    <div class="events-right dark-blue">
+        <h2 class="events-title">УЗНАЙ<br>О ИГРУШКАХ<br>ДЕТСТВА ЗВЁЗД</h2>
+        <p class="events-date">17.08.26</p>
+        <button class="events-button" onclick="openForm()">
+            <span class="button-text">Зарегистрироваться</span>
+            <img src="images/arrow_yellow.svg" alt="arrow" class="button-arrow">
+        </button>
+    </div>
+    <div class="events-left">
+        <img src="images/dark_blue_poster.png" alt="Тёмно-синий постер" class="events-image">
+    </div>
+</div>
+
+<!-- ПЯТЫЙ БЛОК: фото слева, плашка справа -->
+<div class="events-layout">
+    <div class="events-left">
+        <img src="images/blue_poster.png" alt="Голубой постер" class="events-image">
+    </div>
+    <div class="events-right blue">
+        <h2 class="events-title dark">СОЗДАЙ<br>УНИКАЛЬНУЮ<br>ИГРУШКУ</h2>
+        <p class="events-date dark">09.01.26</p>
+        <button class="events-button" onclick="openForm()">
+            <span class="button-text dark">Зарегистрироваться</span>
+            <img src="images/arrow_blue.svg" alt="arrow" class="button-arrow">
+        </button>
+    </div>
+</div>
 
     <!-- Модальная форма -->
     <div class="overlay" id="overlay" onclick="closeOnBg(event)">
@@ -73,6 +133,27 @@
         </div>
     </div>
 
+<!-- Подвал -->
+<footer class="footer">
+    <div class="footer-logo">
+        <img src="images/logo.svg" alt="Люмия" class="footer-logo-img">
+    </div>
+    <div class="footer-contacts">
+        <span>+7 800 555 35 35</span>
+        <span>lumiya@mail.ru</span>
+    </div>
+    <div class="footer-star">
+        <img src="images/star.svg" alt="Звезда" class="footer-star-img">
+    </div>
+    <div class="footer-address">
+        <span>г. Москва,</span>
+        <span>Пушкино 21</span>
+    </div>
+    <div class="footer-reg">
+        <span>Буракова</span>
+        <span>БП25Д312</span>
+    </div>
+</footer>
 
 </body>
 </html>

@@ -611,6 +611,65 @@ body {
     height: auto;
 }
 
+/* ПЛАШКИ МЕРОПРИЯТИЙ */
+.events-right.pink,
+.events-right.purple,
+.events-right.dark-blue,
+.events-right.blue {
+    width: 43%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4.6vw 5vw;
+    min-height: 100%;
+}
+
+.events-right.pink {
+    background-color: #FF8CBD;
+}
+
+.events-right.purple {
+    background-color: #7A59A4;
+}
+
+.events-right.dark-blue {
+    background-color: #2B50AA;
+}
+
+.events-right.blue {
+    background-color: #05C1F1;
+}
+
+.events-left {
+    width: 57%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+}
+
+.events-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Тёмный текст для светлых плашек (розовая, голубая) */
+.events-title.dark {
+    color: #2B50AA;
+}
+
+.events-date.dark {
+    color: #2B50AA;
+}
+
+.button-text.dark {
+    color: #2B50AA;
+}
+
 /* МАГАЗИН */
 .shop-page {
     background-color: #2B50AA;
@@ -1026,31 +1085,6 @@ body {
     color: #2B50AA;
 }
 
-/* ОВЕРЛЕЙ */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(43, 80, 170, 0.55);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.overlay.show {
-    display: flex;
-}
-
-button.events-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
   /* OVERLAY */
 .overlay {
   position: fixed;
@@ -1074,4 +1108,62 @@ button.events-button {
     border: none;
     padding: 0;
     cursor: pointer;
+}
+
+/* ПОДВАЛ */
+.footer {
+    width: 100%;
+    height: 15.5vh;
+    background-color: #2B50AA;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+    gap: 2vw;
+}
+
+.footer-logo-img {
+    height: 8vh;
+    width: auto;
+    display: block;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.footer-contacts span,
+.footer-address span,
+.footer-reg span {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 1.8vw;
+    color: #F7DE1C;
+    line-height: 1.3;
+}
+
+.footer-star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-star-img {
+    height: 7vh;
+    width: auto;
+    display: block;
+}
+
+.footer-address {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.footer-reg {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
 }
