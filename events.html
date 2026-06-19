@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Люмия - Мероприятия</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body class="events-page">
     <nav class="main-nav">
@@ -23,23 +24,55 @@
         </div>
     </div>
 
- <!-- Блок с фото и красным прямоугольником -->
-    <div class="events-layout">
-        <!-- Левая колонка - фото red_poster -->
+  <div class="events-layout">
         <div class="events-left">
             <img src="images/red_poster.png" alt="Красный постер" class="events-image">
         </div>
-        
-        <!-- Правая колонка - красный прямоугольник -->
         <div class="events-right red">
             <h2 class="events-title">ВООБРАЖЕНИЮ <br> НЕТ ПРЕДЕЛА</h2>
             <p class="events-date">10.02.26</p>
-            <a href="#" class="events-button">
+            <!-- Кнопка теперь вызывает openForm() -->
+            <button class="events-button" onclick="openForm()">
                 <span class="button-text">Подробнее</span>
                 <img src="images/arrow_yellow.svg" alt="arrow" class="button-arrow">
-            </a>
+            </button>
         </div>
     </div>
+
+    <!-- Модальная форма -->
+    <div class="overlay" id="overlay" onclick="closeOnBg(event)">
+        <div class="form-box" id="formBox">
+            <button class="close-btn" onclick="closeForm()">×</button>
+            <div id="formContent">
+                <div class="form-title">Запишись на<br>мероприятие</div>
+                <div class="form-field">
+                    <input type="text" placeholder="ФИО" id="fio">
+                </div>
+                <div class="form-field">
+                    <input type="tel" placeholder="Тел.:" id="tel">
+                </div>
+                <div class="form-field">
+                    <input type="email" placeholder="e-mail" id="email">
+                </div>
+                <div class="form-field">
+                    <select id="event" class="placeholder-active" onchange="onSelectChange(this)">
+                        <option value="" disabled selected>Тип мероприятия</option>
+                        <option value="masterclass">Мастер-класс по созданию игрушек</option>
+                        <option value="excursion">Экскурсия по фабрике</option>
+                        <option value="exhibition">Выставка новых коллекций</option>
+                        <option value="kids">Детский праздник</option>
+                    </select>
+                    <span class="chevron">&#8964;</span>
+                </div>
+                <button class="submit-btn" onclick="submitForm()">Отправить заявку</button>
+            </div>
+            <div class="success-msg" id="successMsg">
+                <div class="check">✓</div>
+                <p>Заявка отправлена!<br>Мы свяжемся с вами.</p>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 </html>
