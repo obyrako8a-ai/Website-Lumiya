@@ -716,7 +716,7 @@ body {
     display: flex;
     width: 100%;
     height: 40vh;
-    min-height: 200px;
+    min-height: 0;
     gap: 0;
     overflow: visible;
 }
@@ -747,7 +747,7 @@ body {
 
 /* Стиль для иконки корзины */
 .basket-icon {
-    width: clamp(20px, 3vw, 50px);
+    width: 3vw;
     height: auto;
     transition: opacity 0.2s, transform 0.2s;
 }
@@ -787,7 +787,7 @@ body {
     left: 5%; 
     font-family: 'AlumniSans', sans-serif;
     font-weight: 500;
-    font-size: clamp(16px, 5vw, 36px);
+    font-size: 3vw;
     color: #2B50AA;
     margin: 0;
     padding: 0;
@@ -800,8 +800,6 @@ body {
     bottom: 5%;
     right: 5%;
     width: 8%;
-    max-width: 50px;
-    min-width: 30px;
     height: auto;
     aspect-ratio: 1 / 1;
     cursor: pointer;
@@ -842,16 +840,6 @@ body {
 .plus-button:hover::before,
 .plus-button:hover::after {
     transition: opacity 0.2s, transform 0.2s;
-}
-
-.basket-link {
-    position: absolute;
-    right: 1.5vw;
-    top: 35%;
-    transform: translateY(-50%);
-    text-decoration: none;
-    cursor: pointer;
-    z-index: 20;
 }
 
 .basket-count {
@@ -1247,4 +1235,111 @@ button.events-button {
     display: flex;
     flex-direction: column;
     gap: 1vh;
+}
+
+/* АДАПТИВ ДЛЯ ЭКРАНА 768px — СТРАНИЦА О ФАБРИКЕ */
+@media (max-width: 768px) {
+    .about-layout,
+    .about-layout.reverse {
+        flex-direction: column;
+    }
+
+    .about-left,
+    .about-right {
+        width: 100%;
+    }
+
+    .about-title.green-title,
+    .about-title.purple-title,
+    .about-title.pink-title {
+        font-size: 7vw;
+    }
+
+    .about-text.green-text,
+    .about-text.purple-text,
+    .about-text.pink-text {
+        font-size: 4vw;
+    }
+
+    .about-right.green,
+    .about-right.purple-bg,
+    .about-right.pink {
+        padding: 6vw 6vw;
+    }
+}
+
+/* АДАПТИВ ДЛЯ ЭКРАНА 768px — СТРАНИЦА МЕРОПРИЯТИЯ */
+@media (max-width: 768px) {
+    .events-layout,
+    .events-layout.reverse {
+        flex-direction: column;
+    }
+
+    .events-layout.reverse {
+        flex-direction: column-reverse;
+    }
+
+    .events-left {
+        width: 100%;
+        align-self: auto;
+    }
+
+    .events-right.red,
+    .events-right.pink,
+    .events-right.purple,
+    .events-right.dark-blue,
+    .events-right.blue {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .events-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+    }
+
+    .events-title {
+        font-size: 7vw;
+    }
+
+    .events-date {
+        font-size: 4vw;
+    }
+
+    .events-button .button-text {
+        font-size: 4vw;
+    }
+
+    .events-button .button-arrow {
+        width: 3vw;
+    }
+}
+
+/* АДАПТИВ ДЛЯ ЭКРАНА 768px — СТРАНИЦА МАГАЗИН */
+@media (max-width: 768px) {
+    .shop-rectangles {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+
+    .rectangle {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        min-height: 0;
+    }
+
+    .product-name {
+        font-size: 4vw;
+    }
+
+    .plus-button {
+        width: 4%;
+        max-width: none;
+        min-width: 0;
+    }
 }
