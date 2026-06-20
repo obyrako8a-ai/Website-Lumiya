@@ -15,32 +15,51 @@
 
 body {
     font-family: 'AlumniSans', sans-serif;
+    padding-top: 8vh;
 }
 
 .main-nav {
-    background: #2B50AA;
-    backdrop-filter: blur(10px);
     display: flex;
-    justify-content: center;
-    gap: 20vw;
-    padding: 5vh 5vw;
-    margin-bottom: 0vh;
-    position: relative;
-    z-index: 10;
+    width: 100%;
+    gap: 0;
+    padding: 0;
+    margin-bottom: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .main-nav a {
     font-family: 'AlumniSans', sans-serif;
     font-weight: 500;
-    color: #F7DE1C;
     text-decoration: none;
     font-size: 2vw;
-    transition: color 0.2s;
+    flex: 1;
+    text-align: center;
+    padding: 2.5vh 0;
+    transition: opacity 0.2s;
     white-space: nowrap;
 }
 
-.main-nav a:hover {
-  color: #fff;
+.main-nav a:nth-child(1) {
+    background-color: #2B50AA;
+    color: #F7DE1C;
+}
+
+.main-nav a:nth-child(2) {
+    background-color: #05C1F1;
+    color: #2B50AA;
+}
+
+.main-nav a:nth-child(3) {
+    background-color: #F7DE1C;
+    color: #2B50AA;
+}
+
+.main-nav a:nth-child(4) {
+    background-color: #2B50AA;
+    color: #F7DE1C;
 }
 
 /* ГЛАВНАЯ */
@@ -825,25 +844,55 @@ body {
     transition: opacity 0.2s, transform 0.2s;
 }
 
-/* АСТРАНИЦА ОШИБКА 404 */
+.basket-link {
+    position: absolute;
+    right: 1.5vw;
+    top: 35%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.basket-count {
+    position: absolute;
+    top: -0.6vw;
+    right: -0.8vw;
+    min-width: 1.8vw;
+    height: 1.8vw;
+    padding: 0 0.4vw;
+    border-radius: 50%;
+    background-color: #FF4431;
+    color: #F7DE1C;
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 1.2vw;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.basket-count.show {
+    display: flex;
+}
+
+/* СТРАНИЦА ОШИБКА 404 */
 .error-page {
     margin: 0;
-    padding: 0;
-    overflow: hidden;
+    padding-top: 0vh;
 }
 
 /* Контейнер для полноэкранного изображения */
 .fullscreen-404 {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 100vh;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
     background-color: #2B50AA;
+    margin: 0;
+    display: block;
 }
 
-/* Стиль для изображения */
 .error-image {
     width: 100%;
     height: 100%;
@@ -927,10 +976,9 @@ body {
 
 /* Контейнер для контента книги */
 .book-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2vh 5vw;
-    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0 5vw 4vh;
 }
 
 /* Обертка для фото - центрирование */
@@ -960,10 +1008,36 @@ body {
 .book-description p {
     font-family: 'AlumniSans', sans-serif;
     font-weight: 500;
-    font-size: clamp(16px, 2vw, 24px);
+    font-size: 3vw;
     color: #2B50AA;
     line-height: 1.6;
     margin: 0;
+    text-align: left;
+}
+
+/* Горизонтальная галерея фото книги */
+.book-gallery {
+    display: flex;
+    gap: 6vw;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: 4vh;
+    padding-bottom: 1vh;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.book-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.book-gallery-img {
+    flex: 0 0 auto;
+    width: 24vw;
+    height: auto;
+    display: block;
 }
 
 /* ФОРМА */
@@ -1076,7 +1150,7 @@ body {
 
 .success-msg .check {
     font-size: 48px;
-    color: #01B37F;
+    color: #F7DE1C;
     margin-bottom: 12px;
 }
 

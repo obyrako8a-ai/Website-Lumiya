@@ -43,3 +43,25 @@ function submitForm() {
   document.getElementById('formContent').style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
 }
+
+function addToCart(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const counter = document.getElementById('basketCount');
+    if (counter) {
+        const current = parseInt(counter.textContent, 10) || 0;
+        const next = current + 1;
+        counter.textContent = next;
+        counter.classList.add('show');
+    }
+}
+
+const bookGallery = document.querySelector('.book-gallery');
+if (bookGallery) {
+    bookGallery.addEventListener('wheel', function(e) {
+        if (e.deltaY !== 0) {
+            e.preventDefault();
+            bookGallery.scrollLeft += e.deltaY;
+        }
+    }, { passive: false });
+}

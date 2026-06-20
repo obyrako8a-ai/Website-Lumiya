@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Люмия - Магазин</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body class="shop-page">
     <!-- Шапка -->
@@ -26,28 +27,29 @@
     </div>
 
      <!-- Корзина как ссылка на страницу 404 -->
-        <a href="404.html" class="basket-link">
-            <img src="images/basket.svg" alt="Корзина" class="basket-icon">
-        </a>
+<a href="404.html" class="basket-link">
+    <img src="images/basket.svg" alt="Корзина" class="basket-icon">
+    <span class="basket-count" id="basketCount">0</span>
+</a>
      <!-- ПЕРВЫЙ РЯД-->
      <div class="shop-rectangles">
         <!-- ЖЕЛТЫЙ ПРЯМОУГОЛЬНИК С КНИГОЙ -->
         <a href="book.html" class="rectangle yellow product-card" id="bookLink">
             <img src="images/book.png" alt="Книга" class="product-image">
             <span class="product-name">КНИГА</span>
-            <div class="plus-button" id="plusButton"></div>
+            <div class="plus-button" id="plusButton" onclick="addToCart(event)"></div>
         </a>
          <!-- ГОЛУБОЙ ПРЯМОУГОЛЬНИК С БРАСЛЕТАМИ -->
         <a href="bracelets.html" class="rectangle blue product-card" id="braceletsLink">
             <img src="images/bracelets.png" alt="Браслеты" class="product-image">
             <span class="product-name">БРАСЛЕТЫ</span>
-            <div class="plus-button" id="plusButtonBracelets"></div>
+            <div class="plus-button" id="plusButtonBracelets" onclick="addToCart(event)"></div>
         </a>
          <!-- ЖЕЛТЫЙ ПРЯМОУГОЛЬНИК С БЛОКНОТОМ -->
         <a href="notebook.html" class="rectangle yellow product-card" id="notebookLink">
             <img src="images/notebook.png" alt="Блокнот" class="product-image">
             <span class="product-name">БЛОКНОТ</span>
-            <div class="plus-button" id="plusButtonNotebook"></div>
+            <div class="plus-button" id="plusButtonNotebook" onclick="addToCart(event)"></div>
         </a>
     </div>
     <!-- ВТОРОЙ РЯД-->
@@ -56,19 +58,19 @@
         <a href="stickers.html" class="rectangle blue product-card" id="stickersLink">
             <img src="images/stickers.png" alt="Стикеры" class="product-image">
             <span class="product-name">СТИКЕРЫ</span>
-            <div class="plus-button" id="plusButtonStickers"></div>
+            <div class="plus-button" id="plusButtonStickers" onclick="addToCart(event)"></div>
         </a>
         <!-- ЖЕЛТЫЙ ПРЯМОУГОЛЬНИК С ФУТБОЛКОЙ -->
         <a href="tshirt.html" class="rectangle yellow product-card" id="tshirtLink">
             <img src="images/t_shirt.png" alt="Футболка" class="product-image">
             <span class="product-name">ФУТБОЛКА</span>
-            <div class="plus-button" id="plusButtonTshirt"></div>
+            <div class="plus-button" id="plusButtonTshirt" onclick="addToCart(event)"></div>
         </a>
            <!--  ГОЛУБОЙ ПРЯМОУГОЛЬНИК С ИГРУШКОЙ -->
         <a href="toy.html" class="rectangle blue product-card" id="toyLink">
             <img src="images/toy.png" alt="Игрушка" class="product-image">
             <span class="product-name">ИГРУШКА</span>
-            <div class="plus-button" id="plusButtonToy"></div>
+            <div class="plus-button" id="plusButtonToy" onclick="addToCart(event)"></div>
         </a>
     </div>
 
