@@ -70,36 +70,46 @@ const splashScreen = document.getElementById('splashScreen');
 const indexBody = document.querySelector('.index-page');
 
 if (splashScreen && indexBody) {
-    indexBody.classList.add('splash-active');
-    document.body.style.overflow = 'hidden';
+    const urlParams = new URLSearchParams(window.location.search);
+    const skipSplash = urlParams.get('skip') === 'true';
 
-    let splashClosed = false;
-
-    function closeSplash() {
-        if (splashClosed) return;
-        splashClosed = true;
+    if (skipSplash) {
         splashScreen.classList.add('hide');
         indexBody.classList.remove('splash-active');
         document.body.style.overflow = '';
         document.body.style.overflowY = 'auto';
+    } else {
+        indexBody.classList.add('splash-active');
+        document.body.style.overflow = 'hidden';
+
+        let splashClosed = false;
+
+        function closeSplash() {
+            if (splashClosed) return;
+            splashClosed = true;
+            splashScreen.classList.add('hide');
+            indexBody.classList.remove('splash-active');
+            document.body.style.overflow = '';
+            document.body.style.overflowY = 'auto';
+        }
+
+        window.addEventListener('wheel', function(e) {
+            if (!splashClosed && e.deltaY > 0) {
+                closeSplash();
+            }
+        }, { passive: true });
+
+        let touchStartY = 0;
+        window.addEventListener('touchstart', function(e) {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        window.addEventListener('touchmove', function(e) {
+            if (splashClosed) return;
+            const touchY = e.touches[0].clientY;
+            if (touchStartY - touchY > 30) {
+                closeSplash();
+            }
+        }, { passive: true });
     }
-
-    window.addEventListener('wheel', function(e) {
-        if (!splashClosed && e.deltaY > 0) {
-            closeSplash();
-        }
-    }, { passive: true });
-
-    let touchStartY = 0;
-    window.addEventListener('touchstart', function(e) {
-        touchStartY = e.touches[0].clientY;
-    }, { passive: true });
-
-    window.addEventListener('touchmove', function(e) {
-        if (splashClosed) return;
-        const touchY = e.touches[0].clientY;
-        if (touchStartY - touchY > 30) {
-            closeSplash();
-        }
-    }, { passive: true });
 }

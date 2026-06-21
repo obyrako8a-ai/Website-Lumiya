@@ -13,6 +13,30 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'AlumniSans';
+  src: url('../fonts/AlumniSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  src: url('../fonts/FiraSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  src: url('../fonts/FiraSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
     font-family: 'AlumniSans', sans-serif;
     padding-top: 8vh;
@@ -31,7 +55,7 @@ body {
 }
 
 .main-nav a {
-    font-family: 'AlumniSans', sans-serif;
+    font-family: 'FiraSans', sans-serif;
     font-weight: 500;
     text-decoration: none;
     font-size: 2vw;
@@ -269,7 +293,7 @@ body {
 }
 
 .button-text {
-    font-family: 'AlumniSans', sans-serif;
+    font-family: 'FiraSans', sans-serif;
     font-weight: 500;
     font-size: 2vw;
     color: #2B50AA;
@@ -619,7 +643,7 @@ body {
 }
 
 .events-button .button-text {
-    font-family: 'AlumniSans', sans-serif;
+    font-family: 'FiraSans', sans-serif;
     font-weight: 500;
     font-size: 2vw;
     color: #F7DE1C;
@@ -1038,6 +1062,8 @@ body {
 }
 
 .form-title {
+    font-family: 'FiraSans', sans-serif;
+    font-weight: 500;
     font-size: 32px;
     color: #2B50AA;
     margin-bottom: 24px;
@@ -1057,8 +1083,8 @@ body {
     background: transparent;
     border: none;
     outline: none;
-    font-family: 'AlumniSans', sans-serif;
-    font-weight: 500;
+    font-family: 'FiraSans', sans-serif;
+    font-weight: 400;
     font-size: 20px;
     color: #2B50AA;
     padding: 16px 18px;
@@ -1099,7 +1125,7 @@ body {
     padding: 18px;
     cursor: pointer;
     margin-top: 4px;
-    font-family: 'AlumniSans', sans-serif;
+    font-family: 'FiraSans', sans-serif;
     font-weight: 500;
     font-size: 24px;
     color: #F7DE1C;
@@ -1205,7 +1231,7 @@ button.events-button {
 .footer-contacts span,
 .footer-address span,
 .footer-reg span {
-    font-family: 'AlumniSans', sans-serif;
+    font-family: 'FiraSans', sans-serif;
     font-weight: 500;
     font-size: 1.8vw;
     color: #F7DE1C;
@@ -1300,7 +1326,7 @@ button.events-button {
 
 .splash-star {
     position: relative;
-    width: 30vw;
+    width: 40vw;
     height: auto;
     z-index: 2;
 }
@@ -1398,10 +1424,12 @@ button.events-button {
 /* АДАПТИВ ДЛЯ ЭКРАНА 768px — СТРАНИЦА МАГАЗИН */
 @media (max-width: 768px) {
     .shop-rectangles {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        min-height: 0;
+        display: contents;
+    }
+
+    .shop-page {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .rectangle {
@@ -1412,13 +1440,29 @@ button.events-button {
     }
 
     .product-name {
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
     .plus-button {
         width: 7%;
         max-width: none;
         min-width: 0;
+    }
+
+     #notebookLink {
+        background-color: #05C1F1;
+    }
+
+    #stickersLink {
+        background-color: #F7DE1C;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-page .marquee-container,
+    .shop-page .footer,
+    .shop-page .basket-link {
+        grid-column: 1 / -1;
     }
 }
 
@@ -1483,5 +1527,75 @@ button.events-button {
 @media (max-width: 768px) {
     .fullscreen-404 {
         aspect-ratio: 768 / 880;
+    }
+}
+/* АДАПТИВ ДЛЯ ЭКРАНА 768px — ЗАСТАВКИ */
+@media (max-width: 768px) {
+    .splash-rays {
+        width: 335vw;
+        height: 335vw;
+    }
+
+    .splash-star {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-logo-img,
+    .footer-star-img {
+        height: 3.6vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .basket-icon {
+        width: 6vw;
+    }
+
+    .basket-count {
+        min-width: 3.2vw;
+        height: 3.2vw;
+        font-size: 2.2vw;
+    }
+}
+
+@media (max-width: 475px) {
+    .shop-page {
+        grid-template-columns: 1fr;
+    }
+
+    .rectangle {
+        aspect-ratio: 1 / 1;
+    }
+
+    #notebookLink {
+        background-color: #F7DE1C;
+    }
+
+    #stickersLink {
+        background-color: #05C1F1;
+    }
+}
+
+@media (max-width: 475px) {
+    .footer {
+        height: 8vh;
+    }
+
+    .footer-logo-img,
+    .footer-star-img {
+        height: 3.2vh;
+    }
+}
+
+@media (max-width: 475px) {
+    .splash-rays {
+        width: 440vw;
+        height: 440vw;
+    }
+
+    .splash-star {
+        width: 75vw;
     }
 }

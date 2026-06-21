@@ -8,12 +8,12 @@
     <script src="js/script.js" defer></script>
 </head>
 <body class="events-page">
-    <nav class="main-nav">
-        <a href="index.html">Люмия</a>
-        <a href="about.html">О фабрике</a>
-        <a href="events.html">Мероприятия</a>
-        <a href="shop.html">Магазин</a>
-    </nav>
+  <nav class="main-nav">
+    <a href="index.html?skip=true">Люмия</a>
+    <a href="about.html">О фабрике</a>
+    <a href="events.html">Мероприятия</a>
+    <a href="shop.html">Магазин</a>
+</nav>
        <!-- Бегущая строка -->
     <div class="marquee-container">
         <div class="marquee-content" id="marqueeContent">
@@ -136,14 +136,18 @@
 <!-- Подвал -->
 <footer class="footer">
     <div class="footer-logo">
-        <img src="images/logo.svg" alt="Люмия" class="footer-logo-img">
+         <a href="index.html?skip=true">
+            <img src="images/logo.svg" alt="Люмия" class="footer-logo-img">
+        </a>
     </div>
     <div class="footer-contacts">
         <span>+7 800 555 35 35</span>
         <span>lumiya@mail.ru</span>
     </div>
     <div class="footer-star">
-        <img src="images/star.svg" alt="Звезда" class="footer-star-img">
+        <a href="index.html">
+            <img src="images/star.svg" alt="Звезда" class="footer-star-img">
+        </a>
     </div>
     <div class="footer-address">
         <span>г. Москва,</span>

@@ -9,12 +9,12 @@
 </head>
 <body class="shop-page">
     <!-- Шапка -->
-    <nav class="main-nav">
-        <a href="index.html">Люмия</a>
-        <a href="about.html">О фабрике</a>
-        <a href="events.html">Мероприятия</a>
-        <a href="shop.html">Магазин</a>
-    </nav>
+   <nav class="main-nav">
+    <a href="index.html?skip=true">Люмия</a>
+    <a href="about.html">О фабрике</a>
+    <a href="events.html">Мероприятия</a>
+    <a href="shop.html">Магазин</a>
+</nav>
 
     <!-- Бегущая строка -->
     <div class="marquee-container">
@@ -32,59 +32,63 @@
     <span class="basket-count" id="basketCount">0</span>
 </a>
      <!-- ПЕРВЫЙ РЯД-->
-     <div class="shop-rectangles">
-        <!-- ЖЕЛТЫЙ ПРЯМОУГОЛЬНИК С КНИГОЙ -->
-        <a href="book.html" class="rectangle yellow product-card" id="bookLink">
-            <img src="images/book.png" alt="Книга" class="product-image">
-            <span class="product-name">КНИГА</span>
-            <div class="plus-button" id="plusButton" onclick="addToCart(event)"></div>
-        </a>
-         <!-- ГОЛУБОЙ ПРЯМОУГОЛЬНИК С БРАСЛЕТАМИ -->
-        <a href="bracelets.html" class="rectangle blue product-card" id="braceletsLink">
-            <img src="images/bracelets.png" alt="Браслеты" class="product-image">
-            <span class="product-name">БРАСЛЕТЫ</span>
-            <div class="plus-button" id="plusButtonBracelets" onclick="addToCart(event)"></div>
-        </a>
-         <!-- ЖЕЛТЫЙ ПРЯМОУГОЛЬНИК С БЛОКНОТОМ -->
-        <a href="notebook.html" class="rectangle yellow product-card" id="notebookLink">
-            <img src="images/notebook.png" alt="Блокнот" class="product-image">
-            <span class="product-name">БЛОКНОТ</span>
-            <div class="plus-button" id="plusButtonNotebook" onclick="addToCart(event)"></div>
-        </a>
-    </div>
-    <!-- ВТОРОЙ РЯД-->
-      <div class="shop-rectangles">
-          <!-- ГОЛУБОЙ ПРЯМОУГОЛЬНИК С СТИКЕРАМИ -->
-        <a href="stickers.html" class="rectangle blue product-card" id="stickersLink">
-            <img src="images/stickers.png" alt="Стикеры" class="product-image">
-            <span class="product-name">СТИКЕРЫ</span>
-            <div class="plus-button" id="plusButtonStickers" onclick="addToCart(event)"></div>
-        </a>
-        <!-- ЖЕЛТЫЙ ПРЯМОУГОЛЬНИК С ФУТБОЛКОЙ -->
-        <a href="tshirt.html" class="rectangle yellow product-card" id="tshirtLink">
-            <img src="images/t_shirt.png" alt="Футболка" class="product-image">
-            <span class="product-name">ФУТБОЛКА</span>
-            <div class="plus-button" id="plusButtonTshirt" onclick="addToCart(event)"></div>
-        </a>
-           <!--  ГОЛУБОЙ ПРЯМОУГОЛЬНИК С ИГРУШКОЙ -->
-        <a href="toy.html" class="rectangle blue product-card" id="toyLink">
-            <img src="images/toy.png" alt="Игрушка" class="product-image">
-            <span class="product-name">ИГРУШКА</span>
-            <div class="plus-button" id="plusButtonToy" onclick="addToCart(event)"></div>
-        </a>
-    </div>
+<div class="shop-rectangles">
+    <!-- ЖЕЛТЫЙ ПРЯМОУГОЛЬНИК С КНИГОЙ -->
+    <a href="book.html" class="rectangle yellow product-card" id="bookLink">
+        <img src="images/book.png" alt="Книга" class="product-image">
+        <span class="product-name">КНИГА</span>
+        <div class="plus-button" id="plusButton" onclick="addToCart(event)"></div>
+    </a>
+     <!-- ГОЛУБОЙ ПРЯМОУГОЛЬНИК С БРАСЛЕТАМИ -->
+    <a href="404.html" class="rectangle blue product-card" id="braceletsLink">
+        <img src="images/bracelets.png" alt="Браслеты" class="product-image">
+        <span class="product-name">БРАСЛЕТЫ</span>
+        <div class="plus-button" id="plusButtonBracelets" onclick="addToCart(event)"></div>
+    </a>
+     <!-- ЖЕЛТЫЙ ПРЯМОУГОЛЬНИК С БЛОКНОТОМ -->
+    <a href="404.html" class="rectangle yellow product-card" id="notebookLink">
+        <img src="images/notebook.png" alt="Блокнот" class="product-image">
+        <span class="product-name">БЛОКНОТ</span>
+        <div class="plus-button" id="plusButtonNotebook" onclick="addToCart(event)"></div>
+    </a>
+</div>
+<!-- ВТОРОЙ РЯД-->
+  <div class="shop-rectangles">
+      <!-- ГОЛУБОЙ ПРЯМОУГОЛЬНИК С СТИКЕРАМИ -->
+    <a href="404.html" class="rectangle blue product-card" id="stickersLink">
+        <img src="images/stickers.png" alt="Стикеры" class="product-image">
+        <span class="product-name">СТИКЕРЫ</span>
+        <div class="plus-button" id="plusButtonStickers" onclick="addToCart(event)"></div>
+    </a>
+    <!-- ЖЕЛТЫЙ ПРЯМОУГОЛЬНИК С ФУТБОЛКОЙ -->
+    <a href="404.html" class="rectangle yellow product-card" id="tshirtLink">
+        <img src="images/t_shirt.png" alt="Футболка" class="product-image">
+        <span class="product-name">ФУТБОЛКА</span>
+        <div class="plus-button" id="plusButtonTshirt" onclick="addToCart(event)"></div>
+    </a>
+       <!--  ГОЛУБОЙ ПРЯМОУГОЛЬНИК С ИГРУШКОЙ -->
+    <a href="404.html" class="rectangle blue product-card" id="toyLink">
+        <img src="images/toy.png" alt="Игрушка" class="product-image">
+        <span class="product-name">ИГРУШКА</span>
+        <div class="plus-button" id="plusButtonToy" onclick="addToCart(event)"></div>
+    </a>
+</div>
 
 <!-- Подвал -->
 <footer class="footer">
     <div class="footer-logo">
-        <img src="images/logo.svg" alt="Люмия" class="footer-logo-img">
+         <a href="index.html?skip=true">
+            <img src="images/logo.svg" alt="Люмия" class="footer-logo-img">
+        </a>
     </div>
     <div class="footer-contacts">
         <span>+7 800 555 35 35</span>
         <span>lumiya@mail.ru</span>
     </div>
     <div class="footer-star">
-        <img src="images/star.svg" alt="Звезда" class="footer-star-img">
+        <a href="index.html">
+            <img src="images/star.svg" alt="Звезда" class="footer-star-img">
+        </a>
     </div>
     <div class="footer-address">
         <span>г. Москва,</span>
