@@ -889,7 +889,6 @@ body {
     display: block;
     z-index: 1;
 }
-
 .error-page .main-nav {
     margin-bottom: 0;
 }
@@ -1237,6 +1236,85 @@ button.events-button {
     gap: 1vh;
 }
 
+/* ЗАСТАВКА ГЛАВНОЙ СТРАНИЦЫ */
+.index-page {
+    overflow: hidden;
+}
+
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #2B50AA;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+.splash-screen.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+.splash-rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 225vw;
+    height: 225vw;
+    transform: translate(-50%, -50%);
+}
+
+.splash-ray {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+.splash-ray-blue {
+    animation: spinClockwise 10s linear infinite;
+}
+
+.splash-ray-yellow {
+    animation: spinCounterClockwise 20s linear infinite;
+}
+
+@keyframes spinClockwise {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spinCounterClockwise {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+.splash-star {
+    position: relative;
+    width: 30vw;
+    height: auto;
+    z-index: 2;
+}
+
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
+.index-page.splash-active .main-nav,
+.index-page.splash-active .footer {
+    visibility: hidden;
+}
+
 /* АДАПТИВ ДЛЯ ЭКРАНА 768px — СТРАНИЦА О ФАБРИКЕ */
 @media (max-width: 768px) {
     .about-layout,
@@ -1338,8 +1416,72 @@ button.events-button {
     }
 
     .plus-button {
-        width: 4%;
+        width: 7%;
         max-width: none;
         min-width: 0;
+    }
+}
+
+/* АДАПТИВ ДЛЯ ЭКРАНА 768px — ГЛАВНАЯ СТРАНИЦА */
+@media (max-width: 768px) {
+    .process-steps {
+        flex-direction: column;
+    }
+
+    .process-step {
+        width: 100%;
+        aspect-ratio: 1 / 0.8;
+    }
+
+    .process-image {
+        width: 45vw;
+    }
+
+    .process-label {
+        font-size: 6vw;
+    }
+
+    .bottom-sections {
+        flex-direction: column;
+    }
+
+    .bottom-section {
+        width: 100%;
+        aspect-ratio: 1 / 0.6;
+        min-height: 0;
+    }
+
+    .section-title {
+        font-size: 6vw;
+    }
+
+    .button-text {
+        font-size: 4vw;
+    }
+
+    .section-image {
+        width: 10vw;
+        min-width: 25vw;
+    }
+
+    .info-banner {
+        flex-direction: column;
+        gap: 3vh;
+        padding: 4vh 8vw;
+    }
+
+    .info-banner-left,
+    .info-banner-right {
+        font-size: 5vw;
+        text-align: left;
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* АДАПТИВ ДЛЯ ЭКРАНА 768px — СТРАНИЦА 404 */
+@media (max-width: 768px) {
+    .fullscreen-404 {
+        aspect-ratio: 768 / 880;
     }
 }
