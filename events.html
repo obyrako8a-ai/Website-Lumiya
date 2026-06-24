@@ -8,14 +8,16 @@
     <script src="js/script.js" defer></script>
 </head>
 <body class="events-page">
-  <nav class="main-nav">
+
+<!-- ОСНОВНАЯ ШАПКА -->
+<nav class="main-nav">
     <a href="index.html?skip=true">Люмия</a>
     <a href="about.html">О фабрике</a>
     <a href="events.html">Мероприятия</a>
     <a href="shop.html">Магазин</a>
 </nav>
 
-<!-- МОБИЛЬНАЯ ШАПКА (видна только на 414px) -->
+<!-- МОБИЛЬНАЯ ШАПКА -->
 <header class="mobile-header" id="mobileHeader">
     <button class="burger-btn" id="burgerBtn" aria-label="Меню">
         <span></span>
@@ -24,7 +26,7 @@
     </button>
 </header>
 
-<!-- ВЫПАДАЮЩЕЕ МЕНЮ (желтый прямоугольник) -->
+<!-- ВЫПАДАЮЩЕЕ МЕНЮ -->
 <nav class="mobile-dropdown" id="mobileDropdown">
     <a href="index.html?skip=true">Люмия</a>
     <a href="about.html">О фабрике</a>
@@ -44,7 +46,7 @@
             <span class="marquee-text events-marquee">Не пропусти интересные события фабрики, найди то, что по душе</span>
         </div>
     </div>
-
+<!-- ПЕРВЫЙ БЛОК -->
   <div class="events-layout">
         <div class="events-left">
             <img src="images/red_poster.png" alt="Красный постер" class="events-image">
@@ -60,7 +62,7 @@
         </div>
     </div>
 
-<!-- ВТОРОЙ БЛОК: плашка слева, фото справа -->
+<!-- ВТОРОЙ БЛОК -->
 <div class="events-layout reverse">
     <div class="events-right pink">
         <h2 class="events-title dark">МАСТЕР-КЛАСС<br>ПО СОЗДАНИЮ<br>АКСЕССУАРОВ</h2>
@@ -75,7 +77,7 @@
     </div>
 </div>
 
-<!-- ТРЕТИЙ БЛОК: фото слева, плашка справа -->
+<!-- ТРЕТИЙ БЛОК-->
 <div class="events-layout">
     <div class="events-left">
         <img src="images/purple_poster.png" alt="Фиолетовый постер" class="events-image">
@@ -90,7 +92,7 @@
     </div>
 </div>
 
-<!-- ЧЕТВЕРТЫЙ БЛОК: плашка слева, фото справа -->
+<!-- ЧЕТВЕРТЫЙ БЛОК -->
 <div class="events-layout reverse">
     <div class="events-right dark-blue">
         <h2 class="events-title">УЗНАЙ<br>О ИГРУШКАХ<br>ДЕТСТВА ЗВЁЗД</h2>
@@ -105,7 +107,7 @@
     </div>
 </div>
 
-<!-- ПЯТЫЙ БЛОК: фото слева, плашка справа -->
+<!-- ПЯТЫЙ БЛОК -->
 <div class="events-layout">
     <div class="events-left">
         <img src="images/blue_poster.png" alt="Голубой постер" class="events-image">
@@ -120,7 +122,7 @@
     </div>
 </div>
 
-    <!-- Модальная форма -->
+    <!-- ФОРМА РЕГИСТРАЦИИ -->
     <div class="overlay" id="overlay" onclick="closeOnBg(event)">
         <div class="form-box" id="formBox">
             <button class="close-btn" onclick="closeForm()">×</button>
@@ -154,7 +156,7 @@
         </div>
     </div>
 
-<!-- Подвал -->
+<!-- ПОДВАЛ -->
 <footer class="footer">
     <div class="footer-logo">
          <a href="index.html?skip=true">

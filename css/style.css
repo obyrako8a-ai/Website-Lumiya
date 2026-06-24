@@ -42,6 +42,7 @@ body {
     padding-top: 8vh;
 }
 
+/* ОСНОВНАЯ ШАПКА */
 .main-nav {
     display: flex;
     width: 100%;
@@ -139,7 +140,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Фото лучей на всю ширину без изменения размера */
+/* Лучи */
 .rays-image {
     width: 100%;
     height: auto;
@@ -274,7 +275,7 @@ body {
     margin-bottom: 4vh;
 }
 
-/* Фиолетовый прямоугольник - желтый текст */
+/* Фиолетовый прямоугольник */
 .section-title.purple-title {
     color: #F7DE1C;
 }
@@ -300,20 +301,19 @@ body {
     color: #2B50AA;
 }
 
-/* Фиолетовый прямоугольник - желтая кнопка */
+/* Фиолетовый прямоугольник */
 .purple-button .button-text {
     color: #F7DE1C;
 }
 
 /* Стрелки в кнопках */
 .button-arrow {
-    width: 1.5vw;  /* уменьшено с 1.8vw до 1.2vw */
+    width: 1.5vw;
     height: auto;
     display: block;
     flex-shrink: 0;
 }
 
-/* Правая часть с фото */
 .section-right {
     display: flex;
     align-items: center;
@@ -465,7 +465,7 @@ body {
     object-fit: cover;
 }
 
-/* Анимация для первого блока (house) */
+/* Анимация для первого блока */
 .image-switch .image-3d {
     position: relative;
     opacity: 1;
@@ -483,7 +483,7 @@ body {
     animation: fadeHouse 4s infinite;
 }
 
-/* Анимация для второго блока (office) */
+/* Анимация для второго блока */
 .image-switch .image-office-3d {
     position: relative;
     opacity: 1;
@@ -501,7 +501,7 @@ body {
     animation: fadeOffice 4s infinite;
 }
 
-/* Анимация для третьего блока (factory) */
+/* Анимация для третьего блока */
 .image-switch .image-factory-3d {
     position: relative;
     opacity: 1;
@@ -519,7 +519,6 @@ body {
     animation: fadeFactory 4s infinite;
 }
 
-/* ===== УНИВЕРСАЛЬНАЯ АНИМАЦИЯ (общая логика) ===== */
 @keyframes fadeFirst {
     0% { opacity: 1; }
     45% { opacity: 1; }
@@ -536,7 +535,7 @@ body {
     100% { opacity: 0; }
 }
 
-/* ===== ПЕРВЫЙ БЛОК (house) ===== */
+/* ПЕРВЫЙ БЛОК  */
 .image-switch .image-3d {
     position: relative;
     opacity: 1;
@@ -554,7 +553,7 @@ body {
     animation: fadeSecond 4s infinite;
 }
 
-/* ===== ВТОРОЙ БЛОК (office) ===== */
+/* ВТОРОЙ БЛОК (office) */
 .image-switch .image-office-3d {
     position: relative;
     opacity: 1;
@@ -572,7 +571,7 @@ body {
     animation: fadeSecond 4s infinite;
 }
 
-/* ===== ТРЕТИЙ БЛОК (factory) ===== */
+/* ТРЕТИЙ БЛОК  */
 .image-switch .image-factory-3d {
     position: relative;
     opacity: 1;
@@ -631,7 +630,7 @@ body {
     align-items: flex-start;
 }
 
-/* Левая колонка - фото */
+/* Левая колонка */
 .events-left {
     width: 57%;
     flex-shrink: 0;
@@ -648,7 +647,7 @@ body {
     object-fit: cover;
 }
 
-/* Правая колонка - красный прямоугольник */
+/* Правая колонка */
 .events-right.red {
     width: 43%;
     flex-shrink: 0;
@@ -735,7 +734,6 @@ body {
     background-color: #05C1F1;
 }
 
-/* Тёмный текст для светлых плашек (розовая, голубая) */
 .events-title.dark {
     color: #2B50AA;
 }
@@ -755,7 +753,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Бегущая строка на странице магазина */
+/* Бегущая строка */
 .shop-page .marquee-container {
     padding: 1vh 0;
     margin-bottom: 0;
@@ -770,7 +768,7 @@ body {
     white-space: nowrap;
 }
 
-/* Стили для трех прямоугольников на странице магазина */
+/* Стили для трех прямоугольников */
 .shop-rectangles {
     display: flex;
     width: 100%;
@@ -816,7 +814,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Стили для карточки товара (первый желтый прямоугольник) */
+/* Стили для карточки товара */
 .product-card {
     position: relative;
     text-decoration: none;
@@ -828,7 +826,8 @@ body {
     transform: scale(1.05);
     z-index: 10;
 }
-/* Фото книги - нижний слой */
+
+/* Фото книги */
 .product-image {
     position: absolute;
     top: 50%;
@@ -839,7 +838,8 @@ body {
     z-index: 1;
     pointer-events: none;
 }
-/* Надпись КНИГА внизу слева */
+
+/* Надпись КНИГА */
 .product-name {
     position: absolute;
     bottom: 5%;
@@ -853,7 +853,7 @@ body {
     z-index: 2;
 }
 
-/* Кнопка плюс внизу справа */
+/* Кнопка + */
 .plus-button {
     position: absolute;
     bottom: 5%;
@@ -866,7 +866,7 @@ body {
     z-index: 3;
 }
 
-/* Горизонтальная палочка плюса */
+/* Горизонтальная палочка + */
 .plus-button::before {
     content: '';
     position: absolute;
@@ -878,7 +878,7 @@ body {
     transform: translateY(-50%);
 }
 
-/* Вертикальная палочка плюса */
+/* Вертикальная палочка + */
 .plus-button::after {
     content: '';
     position: absolute;
@@ -890,7 +890,7 @@ body {
     transform: translateX(-50%);
 }
 
-/* Эффект при наведении на кнопку плюс */
+/* Эффект при наведении */
 .plus-button:hover {
     opacity: 0.7;
     transform: scale(1.1);
@@ -929,11 +929,10 @@ body {
     padding-top: 0vh;
 }
 
-/* ===== СТРАНИЦА 404 — ФОНОВЫЕ ЛУЧИ И ЗВЕЗДА ===== */
 .fullscreen-404 {
     position: relative;
     width: 100%;
-    height: 100vh; /* на всю высоту экрана */
+    height: 100vh;
     min-height: 100vh;
     background-color: #2B50AA;
     overflow: hidden;
@@ -966,7 +965,7 @@ body {
     object-fit: contain;
 }
 
-/* Звезда 404 поверх лучей */
+/* Звезда */
 .error-star {
     position: relative;
     width: 40vw;
@@ -1013,7 +1012,7 @@ body {
     width: 100%;
 }
 
-/* Текст КНИГА слева */
+/* Текст КНИГА */
 .book-header-text {
     font-family: 'AlumniSans', sans-serif;
     font-weight: 500;
@@ -1022,7 +1021,7 @@ body {
     margin: 0;
 }
 
-/* Кнопка плюса справа */
+/* Кнопка плюса */
 .book-header-plus {
     position: relative;
     width: 5vw;
@@ -1031,31 +1030,30 @@ body {
     transition: transform 0.2s;
 }
 
-/* Горизонтальная палочка плюса */
+/* Горизонтальная палочка + */
 .book-header-plus::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 0;
     width: 100%;
-    height: 0.4vw;  /* было 4px */
+    height: 0.4vw;
     background-color: #2B50AA;
     transform: translateY(-50%);
 }
 
-/* Вертикальная палочка плюса */
+/* Вертикальная палочка + */
 .book-header-plus::after {
     content: '';
     position: absolute;
     top: 0;
     left: 50%;
-    width: 0.4vw;  /* было 4px */
+    width: 0.4vw;
     height: 100%;
     background-color: #2B50AA;
     transform: translateX(-50%);
 }
 
-/* Эффект при наведении на плюс */
 .book-header-plus:hover {
     transform: scale(1.1);
 }
@@ -1072,7 +1070,7 @@ body {
     padding: 0 5vw 4vh;
 }
 
-/* Обертка для фото - центрирование */
+/* Обертка для фото */
 .book-image-wrapper {
     display: flex;
     justify-content: center;
@@ -1080,7 +1078,6 @@ body {
     margin: 4vh 0;
 }
 
-/* Стиль для фото  */
 .book-image {
     width: 50%;
     height: auto;
@@ -1248,12 +1245,12 @@ body {
 .success-msg p {
     font-family: 'FiraSans', sans-serif;
     font-weight: 400;
-    font-size: 2.2vw;  /* было 22px */
+    font-size: 2.2vw;
     color: #2B50AA;
     line-height: 1.4;
 }
 
-  /* OVERLAY */
+  /* Затемнение */
 .overlay {
   position: fixed;
   top: 0;
@@ -1541,7 +1538,7 @@ button.events-button {
 
     .basket-link {
         margin: 0 4vw 0 auto;
-        top: 25vh;  /* поднимаем выше */
+        top: 25vh;
     }
 }
 
@@ -1666,7 +1663,7 @@ button.events-button {
 
     .basket-link {
         margin: 0 4vw 0 auto;
-        top: 20vh;  /* поднимаем выше */
+        top: 20vh;
     }
 }
 
@@ -1692,7 +1689,7 @@ button.events-button {
     }
 }
 
-/* ===== МОБИЛЬНАЯ ШАПКА (по умолчанию скрыта) ===== */
+/* МОБИЛЬНАЯ ШАПКА */
 .mobile-header {
     display: none;
     position: fixed;
@@ -1708,7 +1705,7 @@ button.events-button {
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* Бургер-кнопка (три желтые полоски) */
+/* Бургер-кнопка */
 .burger-btn {
     width: 6vw;
     height: 5vw;
@@ -1732,7 +1729,7 @@ button.events-button {
     transition: 0.2s;
 }
 
-/* ===== ВЫПАДАЮЩЕЕ МЕНЮ (желтый прямоугольник) ===== */
+/* МЕНЮ */
 .mobile-dropdown {
     position: fixed;
     top: 8vh;
@@ -1769,7 +1766,7 @@ button.events-button {
     display: flex !important;
 }
 
-/* ===== ОВЕРЛЕЙ (затемнение) ===== */
+/* Затемнение */
 .overlay-menu {
     position: fixed;
     top: 0;
@@ -1786,17 +1783,14 @@ button.events-button {
 
 /* ===== АДАПТИВ ДЛЯ 414px ===== */
 @media (max-width: 475px) {
-    /* Скрываем десктопную навигацию */
     .main-nav {
         display: none !important;
     }
     
-    /* Показываем мобильную шапку */
     .mobile-header {
         display: flex !important;
     }
     
-    /* Корректировка размера меню */
     .mobile-dropdown {
         width: 44vw;
         max-width: 200px;
@@ -1809,7 +1803,6 @@ button.events-button {
         padding: 1.8vh 5vw;
     }
     
-    /* Бургер адаптив */
     .burger-btn {
         width: 7vw;
         height: 5.5vw;
@@ -1818,8 +1811,7 @@ button.events-button {
     }
 }
 
-/* ===== АДАПТИВ ДЛЯ СТРЕЛОК В КНОПКАХ ===== */
-/* Для планшетов */
+/* Стрелки в кнопках */
 @media (max-width: 768px) {
     .button-arrow {
         width: 2vw;
@@ -1828,7 +1820,6 @@ button.events-button {
     }
 }
 
-/* Для мобильных устройств (414px) */
 @media (max-width: 475px) {
     .button-arrow {
         width: 3vw;
@@ -1836,7 +1827,7 @@ button.events-button {
         max-width: 28px;
     }
 }
-/* Адаптив для планшетов */
+
 @media (max-width: 768px) {
     .book-header-text {
         font-size: clamp(28px, 8vw, 56px) !important;
@@ -1846,7 +1837,6 @@ button.events-button {
     }
 }
 
-/* Адаптив для мобильных (414px) */
 @media (max-width: 475px) {
     .book-header-text {
         font-size: clamp(24px, 10vw, 40px) !important;
@@ -1859,10 +1849,9 @@ button.events-button {
     }
 }
 
-/* Адаптив для планшетов (768px) */
 @media (max-width: 768px) {
     .book-description p {
-        font-size: 5vw !important;  /* увеличиваем для планшетов */
+        font-size: 5vw !important;
         line-height: 1.5;
     }
     
@@ -1871,16 +1860,15 @@ button.events-button {
     }
 }
 
-/* Адаптив для мобильных (414px) */
 @media (max-width: 475px) {
     .book-description p {
-        font-size: 6vw !important;  /* еще больше для мобильных */
+        font-size: 6vw !important; 
         line-height: 1.5;
     }
     
     .book-page .basket-link {
         margin: 0 4vw 0 auto;
-        top: 13vh;  /* поднимаем выше */
+        top: 13vh;
     }
 }
 

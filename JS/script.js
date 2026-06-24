@@ -17,7 +17,7 @@ function reverseMarquee() {
     }
 }
 
-// ===== ФОРМА =====
+//  Форма 
 function openForm() {
     document.getElementById('overlay').classList.add('show');
     document.getElementById('formContent').style.display = 'block';
@@ -36,12 +36,10 @@ function onSelectChange(sel) {
     sel.classList.remove('placeholder-active');
 }
 
-// Валидация email
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-// Валидация телефона (российский формат)
 function isValidPhone(tel) {
     return /^[\d\+\-\(\)\s]{10,18}$/.test(tel);
 }
@@ -73,7 +71,7 @@ function submitForm() {
     document.getElementById('successMsg').style.display = 'block';
 }
 
-// ===== КОРЗИНА =====
+// Корзина
 function addToCart(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -86,7 +84,7 @@ function addToCart(e) {
     }
 }
 
-// ===== ГАЛЕРЕЯ КНИГИ =====
+// Скролл книги
 const bookGallery = document.querySelector('.book-gallery');
 if (bookGallery) {
     bookGallery.addEventListener('wheel', function(e) {
@@ -97,7 +95,7 @@ if (bookGallery) {
     }, { passive: false });
 }
 
-// ===== ЗАСТАВКА =====
+// Заставка
 const splashScreen = document.getElementById('splashScreen');
 const indexBody = document.querySelector('.index-page');
 
@@ -146,7 +144,7 @@ if (splashScreen && indexBody) {
     }
 }
 
-// ===== МОБИЛЬНОЕ МЕНЮ =====
+// Мобильное меню
 (function() {
     const burger = document.getElementById('burgerBtn');
     const dropdown = document.getElementById('mobileDropdown');
@@ -209,9 +207,9 @@ if (splashScreen && indexBody) {
     });
 })();
 
-// ===== ИНИЦИАЛИЗАЦИЯ СОБЫТИЙ =====
+// Регистрация
 document.addEventListener('DOMContentLoaded', function() {
-    // Кнопки "Зарегистрироваться" на странице мероприятий
+    // Кнопки "Зарегистрироваться" на стр мероприятий
     document.querySelectorAll('.events-button[data-form="open"]').forEach(function(btn) {
         btn.addEventListener('click', openForm);
     });

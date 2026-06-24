@@ -8,6 +8,8 @@
     <script src="js/script.js" defer></script>
 </head>
 <body class="book-page">
+
+<!-- ОСНОВНАЯ ШАПКА -->
 <nav class="main-nav">
     <a href="index.html?skip=true">Люмия</a>
     <a href="about.html">О фабрике</a>
@@ -15,7 +17,7 @@
     <a href="shop.html">Магазин</a>
 </nav>
 
-<!-- МОБИЛЬНАЯ ШАПКА (видна только на 414px) -->
+<!-- МОБИЛЬНАЯ ШАПКА -->
 <header class="mobile-header" id="mobileHeader">
     <button class="burger-btn" id="burgerBtn" aria-label="Меню">
         <span></span>
@@ -24,7 +26,7 @@
     </button>
 </header>
 
-<!-- ВЫПАДАЮЩЕЕ МЕНЮ (желтый прямоугольник) -->
+<!-- ВЫПАДАЮЩЕЕ МЕНЮ -->
 <nav class="mobile-dropdown" id="mobileDropdown">
     <a href="index.html?skip=true">Люмия</a>
     <a href="about.html">О фабрике</a>
@@ -35,30 +37,29 @@
 <!-- ЗАТЕМНЕНИЕ ФОНА -->
 <div class="overlay-menu" id="overlayMenu"></div>
 
-  <!-- Корзина -->
+  <!-- КОРЗИНА -->
     <a href="404.html" class="basket-link">
         <img src="images/basket.svg" alt="Корзина" class="basket-icon">
         <span class="basket-count" id="basketCount">0</span>
     </a>
-<!-- фото книги -->
+<!-- КНИГА -->
         <div class="book-image-wrapper">
             <img src="images/book.png" alt="Книга" class="book-image">
         </div>
- <!-- Верхняя панель с текстом и плюсом -->
+ <!-- ТЕКСТ И + -->
     <div class="book-header">
         <span class="book-header-text">КНИГА</span>
         <div class="book-header-plus" onclick="addToCart(event)"></div>
     </div>
 
-   <!-- Контент страницы Книга -->
+   <!-- КОНТЕНТ -->
 <div class="book-container">
     
-    <!-- Описание книги -->
     <div class="book-description">
         <p>«Секреты фабрики Люмия» — это взгляд изнутри на процесс, полный любви, внимания к деталям и настоящей магии ручного труда. В книге подробно рассказывается о всех этапах создания: от первой идеи и эскиза в арт-мастерской до экспериментов в лаборатории.</p>
     </div>
 
-    <!-- Горизонтальный скролл фото книги -->
+    <!-- ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ -->
     <div class="book-gallery">
         <img src="images/1_page.png" alt="Страница книги 1" class="book-gallery-img">
         <img src="images/2_page.png" alt="Страница книги 2" class="book-gallery-img">
@@ -69,7 +70,7 @@
     </div>
 </div>
 
-<!-- Подвал -->
+<!-- ПОДВАЛ -->
 <footer class="footer">
     <div class="footer-logo">
         <a href="index.html?skip=true">
