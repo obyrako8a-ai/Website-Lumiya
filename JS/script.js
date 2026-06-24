@@ -95,8 +95,9 @@ if (bookGallery) {
     }, { passive: false });
 }
 
-/* Заставка */
+/* ЗАСТАВКА */
 const splashScreen = document.getElementById('splashScreen');
+const splashButton = document.getElementById('splashButton');
 const indexBody = document.querySelector('.index-page');
 
 if (splashScreen && indexBody) {
@@ -123,12 +124,14 @@ if (splashScreen && indexBody) {
             document.body.style.overflowY = 'auto';
         }
 
+        /* Закрытие по скроллу */
         window.addEventListener('wheel', function(e) {
             if (!splashClosed && e.deltaY > 0) {
                 closeSplash();
             }
         }, { passive: true });
 
+        /* Закрытие по тачу */
         let touchStartY = 0;
         window.addEventListener('touchstart', function(e) {
             touchStartY = e.touches[0].clientY;
@@ -141,6 +144,14 @@ if (splashScreen && indexBody) {
                 closeSplash();
             }
         }, { passive: true });
+
+        /*  Закрытие по клику на кнопку */
+        if (splashButton) {
+            splashButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                closeSplash();
+            });
+        }
     }
 }
 

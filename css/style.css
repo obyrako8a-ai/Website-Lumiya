@@ -1446,9 +1446,22 @@ button.events-button {
     margin-top: 4vh;
     position: relative;
     z-index: 3;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Текст внизу */
+.splash-bottom:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.splash-bottom:active {
+    transform: scale(0.95);
+}
+
 .splash-bottom-text {
     font-family: 'FiraSans', sans-serif;
     font-weight: 400;
@@ -1458,25 +1471,24 @@ button.events-button {
     line-height: 1.3;
     text-transform: uppercase;
     letter-spacing: 0.15em;
+    pointer-events: none;
 }
 
-/* Стрелка вниз */
 .splash-arrow-down {
     width: 2.2vw;
     height: auto;
-    transform: rotate(180deg);
+    transform: rotate(90deg);
     animation: bounceArrow 2s ease-in-out infinite;
-    cursor: pointer;
+    pointer-events: none;
     opacity: 0.8;
 }
 
-/* Анимация стрелки */
 @keyframes bounceArrow {
     0%, 100% {
-        transform: rotate(180deg) translateY(0);
+        transform: rotate(90deg) translateY(0);
     }
     50% {
-        transform: rotate(180deg) translateY(0.6vw);
+        transform: rotate(90deg) translateY(0.6vw);
     }
 }
 
@@ -1524,14 +1536,6 @@ button.events-button {
         width: 3vw;
     }
     
-    @keyframes bounceArrow {
-        0%, 100% {
-            transform: rotate(90deg) translateY(0);
-        }
-        50% {
-            transform: rotate(90deg) translateY(0.8vw);
-        }
-    }
 }
 
 @media (max-width: 475px) {
@@ -1568,14 +1572,6 @@ button.events-button {
         width: 4vw;
     }
     
-    @keyframes bounceArrow {
-        0%, 100% {
-            transform: rotate(90deg) translateY(0);
-        }
-        50% {
-            transform: rotate(90deg) translateY(1vw);
-        }
-    }
 }
 
 
