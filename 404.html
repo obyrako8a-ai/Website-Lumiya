@@ -15,10 +15,37 @@
     <a href="events.html">Мероприятия</a>
     <a href="shop.html">Магазин</a>
 </nav>
- <!-- Полноэкранное SVG изображение -->
-    <div class="fullscreen-404">
-        <img src="images/404.svg" alt="404" class="error-image">
+
+<!-- МОБИЛЬНАЯ ШАПКА (видна только на 414px) -->
+<header class="mobile-header" id="mobileHeader">
+    <button class="burger-btn" id="burgerBtn" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<!-- ВЫПАДАЮЩЕЕ МЕНЮ (желтый прямоугольник) -->
+<nav class="mobile-dropdown" id="mobileDropdown">
+    <a href="index.html?skip=true">Люмия</a>
+    <a href="about.html">О фабрике</a>
+    <a href="events.html">Мероприятия</a>
+    <a href="shop.html">Магазин</a>
+</nav>
+
+<!-- ЗАТЕМНЕНИЕ ФОНА -->
+<div class="overlay-menu" id="overlayMenu"></div>
+
+<!-- Фоновое изображение с лучами и звездой -->
+<div class="fullscreen-404">
+    <!-- Лучи (нижний слой) -->
+    <div class="error-rays">
+        <img src="images/blue_rays.svg" alt="" class="error-ray error-ray-blue">
+        <img src="images/yellow_rays.svg" alt="" class="error-ray error-ray-yellow">
     </div>
+    <!-- Звезда (верхний слой) -->
+    <img src="images/404_star.svg" alt="404" class="error-star">
+</div>
 
 <!-- Подвал -->
 <footer class="footer">

@@ -58,7 +58,7 @@ body {
     font-family: 'FiraSans', sans-serif;
     font-weight: 500;
     text-decoration: none;
-    font-size: 2vw;
+    font-size: clamp(10px, 2vw, 24px);  /* адаптивный размер */
     flex: 1;
     text-align: center;
     padding: 2.5vh 0;
@@ -85,6 +85,7 @@ body {
     background-color: #2B50AA;
     color: #F7DE1C;
 }
+
 
 /* ГЛАВНАЯ */
 .index-page {
@@ -152,7 +153,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6vh 10vw;
+    padding: 6vh 4vw;  /* уменьшено с 10vw до 4vw */
     gap: 4vw;
 }
 
@@ -241,7 +242,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5% 8%;
+    padding: 5% 8% 5% 4%;
     overflow: hidden;
 }
 
@@ -304,9 +305,12 @@ body {
     color: #F7DE1C;
 }
 
+/* Стрелки в кнопках */
 .button-arrow {
-    width: clamp(24px, 3vw, 40px);
+    width: 1.5vw;  /* уменьшено с 1.8vw до 1.2vw */
     height: auto;
+    display: block;
+    flex-shrink: 0;
 }
 
 /* Правая часть с фото */
@@ -346,21 +350,23 @@ body {
 .about-layout {
     display: flex;
     width: 100%;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .about-layout.reverse {
     flex-direction: row-reverse;
 }
 
+/* Левая часть с фото */
 .about-left {
     width: 50%;
-    flex-shrink: 0; 
+    flex-shrink: 0;
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-start;
 }
 
+/* Правая часть с плашкой */
 .about-right {
     width: 50%;
     flex-shrink: 0;
@@ -369,19 +375,29 @@ body {
     justify-content: center;
 }
 
-/* Общие стили для фото */
-.about-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Зеленый прямоугольник */
+/* Цветные плашки */
 .about-right.green {
     background-color: #01B37F;
-    padding: 4vw 5vw;
+    padding: 4vw 4vw;
+    height: 100%;
+    min-height: 100%;
 }
 
+.about-right.purple-bg {
+    background-color: #7A59A4;
+    padding: 4vw 4vw;
+    height: 100%;
+    min-height: 100%;
+}
+
+.about-right.pink {
+    background-color: #FF8CBD;
+    padding: 4vw 4vw;
+    height: 100%;
+    min-height: 100%;
+}
+
+/* Заголовки */
 .about-title.green-title {
     font-family: 'AlumniSans', sans-serif;
     font-weight: 500;
@@ -390,6 +406,23 @@ body {
     margin-bottom: 2vh;
 }
 
+.about-title.purple-title {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 4vw;
+    color: #F7DE1C;
+    margin-bottom: 2vh;
+}
+
+.about-title.pink-title {
+    font-family: 'AlumniSans', sans-serif;
+    font-weight: 500;
+    font-size: 4vw;
+    color: #2B50AA;
+    margin-bottom: 2vh;
+}
+
+/* Текст */
 .about-text.green-text {
     font-family: 'AlumniSans', sans-serif;
     font-weight: 500;
@@ -397,20 +430,6 @@ body {
     color: #2B50AA;
     line-height: 1.4;
     margin: 0;
-}
-
-/* Фиолетовый прямоугольник */
-.about-right.purple-bg {
-    background-color: #7A59A4;
-    padding: 4vw 5vw;
-}
-
-.about-title.purple-title {
-    font-family: 'AlumniSans', sans-serif;
-    font-weight: 500;
-    font-size: 4vw;
-    color: #F7DE1C;
-    margin-bottom: 2vh;
 }
 
 .about-text.purple-text {
@@ -422,20 +441,6 @@ body {
     margin: 0;
 }
 
-/* Розовый прямоугольник */
-.about-right.pink {
-    background-color: #FF8CBD;
-    padding: 4vw 5vw;
-}
-
-.about-title.pink-title {
-    font-family: 'AlumniSans', sans-serif;
-    font-weight: 500;
-    font-size: 4vw;
-    color: #2B50AA;
-    margin-bottom: 2vh;
-}
-
 .about-text.pink-text {
     font-family: 'AlumniSans', sans-serif;
     font-weight: 500;
@@ -444,17 +449,20 @@ body {
     line-height: 1.4;
     margin: 0;
 }
-/* Анимация переключения фото (общие стили) */
+
+/* Контейнер с фото */
 .image-switch {
     position: relative;
     width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
 .image-switch .about-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    object-fit: cover;
 }
 
 /* Анимация для первого блока (house) */
@@ -468,7 +476,10 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0;
+    object-fit: cover;
     animation: fadeHouse 4s infinite;
 }
 
@@ -483,7 +494,10 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0;
+    object-fit: cover;
     animation: fadeOffice 4s infinite;
 }
 
@@ -498,12 +512,15 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0;
+    object-fit: cover;
     animation: fadeFactory 4s infinite;
 }
 
-/* Ключевые кадры для первого блока */
-@keyframes fade3D {
+/* ===== УНИВЕРСАЛЬНАЯ АНИМАЦИЯ (общая логика) ===== */
+@keyframes fadeFirst {
     0% { opacity: 1; }
     45% { opacity: 1; }
     50% { opacity: 0; }
@@ -511,7 +528,7 @@ body {
     100% { opacity: 1; }
 }
 
-@keyframes fadeHouse {
+@keyframes fadeSecond {
     0% { opacity: 0; }
     45% { opacity: 0; }
     50% { opacity: 1; }
@@ -519,38 +536,71 @@ body {
     100% { opacity: 0; }
 }
 
-/* Ключевые кадры для второго блока */
-@keyframes fadeOffice3D {
-    0% { opacity: 1; }
-    45% { opacity: 1; }
-    50% { opacity: 0; }
-    95% { opacity: 0; }
-    100% { opacity: 1; }
+/* ===== ПЕРВЫЙ БЛОК (house) ===== */
+.image-switch .image-3d {
+    position: relative;
+    opacity: 1;
+    animation: fadeFirst 4s infinite;
 }
 
-@keyframes fadeOffice {
-    0% { opacity: 0; }
-    45% { opacity: 0; }
-    50% { opacity: 1; }
-    95% { opacity: 1; }
-    100% { opacity: 0; }
+.image-switch .image-house {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    object-fit: cover;
+    animation: fadeSecond 4s infinite;
 }
 
-/* Ключевые кадры для третьего блока */
-@keyframes fadeFactory3D {
-    0% { opacity: 1; }
-    45% { opacity: 1; }
-    50% { opacity: 0; }
-    95% { opacity: 0; }
-    100% { opacity: 1; }
+/* ===== ВТОРОЙ БЛОК (office) ===== */
+.image-switch .image-office-3d {
+    position: relative;
+    opacity: 1;
+    animation: fadeFirst 4s infinite;
 }
 
-@keyframes fadeFactory {
-    0% { opacity: 0; }
-    45% { opacity: 0; }
-    50% { opacity: 1; }
-    95% { opacity: 1; }
-    100% { opacity: 0; }
+.image-switch .image-office {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    object-fit: cover;
+    animation: fadeSecond 4s infinite;
+}
+
+/* ===== ТРЕТИЙ БЛОК (factory) ===== */
+.image-switch .image-factory-3d {
+    position: relative;
+    opacity: 1;
+    animation: fadeFirst 4s infinite;
+}
+
+.image-switch .image-factory {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    object-fit: cover;
+    animation: fadeSecond 4s infinite;
+}
+
+/* Для экранов 1440px и больше */
+@media (min-width: 1440px) {
+    .image-switch {
+        max-height: 50vh;
+    }
+    
+    .about-right.green,
+    .about-right.purple-bg,
+    .about-right.pink {
+        max-height: 50vh;
+    }
 }
 
 /* МЕРОПРИЯТИЯ */
@@ -588,13 +638,14 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    align-self: stretch;
 }
 
-/* Фото red_poster */
 .events-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    object-fit: cover;
 }
 
 /* Правая колонка - красный прямоугольник */
@@ -605,7 +656,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4.6vw 5vw;
+    padding: 4.6vw 4vw;
     min-height: 100%;
 }
 
@@ -664,7 +715,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4.6vw 5vw;
+    padding: 4.6vw 4vw;
     min-height: 100%;
 }
 
@@ -682,22 +733,6 @@ body {
 
 .events-right.blue {
     background-color: #05C1F1;
-}
-
-.events-left {
-    width: 57%;
-    flex-shrink: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-}
-
-.events-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
 }
 
 /* Тёмный текст для светлых плашек (розовая, голубая) */
@@ -894,27 +929,72 @@ body {
     padding-top: 0vh;
 }
 
-/* Контейнер для полноэкранного изображения */
+/* ===== СТРАНИЦА 404 — ФОНОВЫЕ ЛУЧИ И ЗВЕЗДА ===== */
 .fullscreen-404 {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
+    height: 100vh; /* на всю высоту экрана */
+    min-height: 100vh;
     background-color: #2B50AA;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
+    padding: 0;
+}
+
+/* Контейнер для лучей */
+.error-rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 225vw;
+    height: 225vw;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Каждый луч */
+.error-ray {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+/* Звезда 404 поверх лучей */
+.error-star {
+    position: relative;
+    width: 40vw;
+    max-width: 400px;
+    height: auto;
+    z-index: 2;
     display: block;
 }
 
-.error-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    z-index: 1;
+/* Адаптив для 404 страницы */
+@media (max-width: 768px) {
+    .error-rays {
+        width: 335vw;
+        height: 335vw;
+    }
+    .error-star {
+        width: 60vw;
+    }
 }
-.error-page .main-nav {
-    margin-bottom: 0;
+
+@media (max-width: 475px) {
+    .error-rays {
+        width: 440vw;
+        height: 440vw;
+    }
+    .error-star {
+        width: 75vw;
+    }
 }
 
 /* СТРАНИЦА КНИГИ */
@@ -928,7 +1008,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3vh 5vw;
+    padding: 3vh 4vw;
     background-color: transparent;
     width: 100%;
 }
@@ -937,7 +1017,7 @@ body {
 .book-header-text {
     font-family: 'AlumniSans', sans-serif;
     font-weight: 500;
-    font-size: clamp(24px, 5vw, 48px);
+    font-size: 6vw;
     color: #2B50AA;
     margin: 0;
 }
@@ -945,8 +1025,8 @@ body {
 /* Кнопка плюса справа */
 .book-header-plus {
     position: relative;
-    width: clamp(30px, 5vw, 50px);
-    height: clamp(30px, 5vw, 50px);
+    width: 5vw;
+    height: 5vw;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -958,7 +1038,7 @@ body {
     top: 50%;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 0.4vw;  /* было 4px */
     background-color: #2B50AA;
     transform: translateY(-50%);
 }
@@ -969,7 +1049,7 @@ body {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 4px;
+    width: 0.4vw;  /* было 4px */
     height: 100%;
     background-color: #2B50AA;
     transform: translateX(-50%);
@@ -1054,7 +1134,6 @@ body {
 /* ФОРМА */
 .form-box {
     background: #05C1F1;
-    border-radius: 4px;
     width: 94%;
     max-width: 520px;
     padding: 32px 36px 36px;
@@ -1167,8 +1246,11 @@ body {
 }
 
 .success-msg p {
-    font-size: 22px;
+    font-family: 'FiraSans', sans-serif;
+    font-weight: 400;
+    font-size: 2.2vw;  /* было 22px */
     color: #2B50AA;
+    line-height: 1.4;
 }
 
   /* OVERLAY */
@@ -1456,6 +1538,11 @@ button.events-button {
     #stickersLink {
         background-color: #F7DE1C;
     }
+
+    .basket-link {
+        margin: 0 4vw 0 auto;
+        top: 25vh;  /* поднимаем выше */
+    }
 }
 
 @media (max-width: 768px) {
@@ -1576,6 +1663,11 @@ button.events-button {
     #stickersLink {
         background-color: #05C1F1;
     }
+
+    .basket-link {
+        margin: 0 4vw 0 auto;
+        top: 20vh;  /* поднимаем выше */
+    }
 }
 
 @media (max-width: 475px) {
@@ -1599,3 +1691,197 @@ button.events-button {
         width: 75vw;
     }
 }
+
+/* ===== МОБИЛЬНАЯ ШАПКА (по умолчанию скрыта) ===== */
+.mobile-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: #2B50AA;
+    z-index: 1500;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 5vw;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Бургер-кнопка (три желтые полоски) */
+.burger-btn {
+    width: 6vw;
+    height: 5vw;
+    max-width: 44px;
+    max-height: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1600;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.burger-btn span {
+    display: block;
+    width: 100%;
+    height: 12%;
+    background-color: #F7DE1C;
+    border-radius: 2px;
+    transition: 0.2s;
+}
+
+/* ===== ВЫПАДАЮЩЕЕ МЕНЮ (желтый прямоугольник) ===== */
+.mobile-dropdown {
+    position: fixed;
+    top: 8vh;
+    right: 5vw;
+    width: 44vw;
+    max-width: 200px;
+    background-color: #F7DE1C;
+    border-radius: 0;  /* убираем скругления */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    padding: 2.5vh 0;
+    display: none;
+    flex-direction: column;
+    z-index: 2000;
+}
+.mobile-dropdown a {
+    font-family: 'FiraSans', sans-serif;
+    font-weight: 500;
+    font-size: 4.5vw;
+    color: #2B50AA;
+    text-decoration: none;
+    padding: 1.8vh 5vw;
+    border-bottom: 1px solid rgba(43,80,170,0.1);
+    transition: background 0.15s;
+    text-align: left;
+    display: block;
+}
+.mobile-dropdown a:last-child {
+    border-bottom: none;
+}
+.mobile-dropdown a:hover {
+    background: rgba(43,80,170,0.08);
+}
+.mobile-dropdown.open {
+    display: flex !important;
+}
+
+/* ===== ОВЕРЛЕЙ (затемнение) ===== */
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 1400;
+    display: none;
+}
+.overlay-menu.open {
+    display: block !important;
+}
+
+/* ===== АДАПТИВ ДЛЯ 414px ===== */
+@media (max-width: 475px) {
+    /* Скрываем десктопную навигацию */
+    .main-nav {
+        display: none !important;
+    }
+    
+    /* Показываем мобильную шапку */
+    .mobile-header {
+        display: flex !important;
+    }
+    
+    /* Корректировка размера меню */
+    .mobile-dropdown {
+        width: 44vw;
+        max-width: 200px;
+        right: 4vw;
+        top: 8vh;
+        padding: 1.5vh 0;
+    }
+    .mobile-dropdown a {
+        font-size: 4.2vw;
+        padding: 1.8vh 5vw;
+    }
+    
+    /* Бургер адаптив */
+    .burger-btn {
+        width: 7vw;
+        height: 5.5vw;
+        max-width: 44px;
+        max-height: 34px;
+    }
+}
+
+/* ===== АДАПТИВ ДЛЯ СТРЕЛОК В КНОПКАХ ===== */
+/* Для планшетов */
+@media (max-width: 768px) {
+    .button-arrow {
+        width: 2vw;
+        min-width: 12px;
+        max-width: 24px;
+    }
+}
+
+/* Для мобильных устройств (414px) */
+@media (max-width: 475px) {
+    .button-arrow {
+        width: 3vw;
+        min-width: 14px;
+        max-width: 28px;
+    }
+}
+/* Адаптив для планшетов */
+@media (max-width: 768px) {
+    .book-header-text {
+        font-size: clamp(28px, 8vw, 56px) !important;
+    }
+    .book-image {
+        width: 80% !important;
+    }
+}
+
+/* Адаптив для мобильных (414px) */
+@media (max-width: 475px) {
+    .book-header-text {
+        font-size: clamp(24px, 10vw, 40px) !important;
+    }
+    .book-image {
+        width: 90% !important;
+    }
+    .book-page .basket-link {
+        margin: 0 4vw 1vh auto;
+    }
+}
+
+/* Адаптив для планшетов (768px) */
+@media (max-width: 768px) {
+    .book-description p {
+        font-size: 5vw !important;  /* увеличиваем для планшетов */
+        line-height: 1.5;
+    }
+    
+    .book-page .basket-link {
+        margin: 0 4vw 0.5vh auto;
+    }
+}
+
+/* Адаптив для мобильных (414px) */
+@media (max-width: 475px) {
+    .book-description p {
+        font-size: 6vw !important;  /* еще больше для мобильных */
+        line-height: 1.5;
+    }
+    
+    .book-page .basket-link {
+        margin: 0 4vw 0 auto;
+        top: 13vh;  /* поднимаем выше */
+    }
+}
+
+

@@ -17,33 +17,63 @@ function reverseMarquee() {
     }
 }
 
+// ===== ФОРМА =====
 function openForm() {
-  document.getElementById('overlay').classList.add('show');
-  document.getElementById('formContent').style.display = 'block';
-  document.getElementById('successMsg').style.display = 'none';
-}
-function closeForm() {
-  document.getElementById('overlay').classList.remove('show');
-}
-function closeOnBg(e) {
-  if (e.target === document.getElementById('overlay')) closeForm();
-}
-function onSelectChange(sel) {
-  sel.classList.remove('placeholder-active');
-}
-function submitForm() {
-  const fio = document.getElementById('fio').value.trim();
-  const tel = document.getElementById('tel').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const event = document.getElementById('event').value;
-  if (!fio || !tel || !email || !event) {
-    alert('Пожалуйста, заполните все поля');
-    return;
-  }
-  document.getElementById('formContent').style.display = 'none';
-  document.getElementById('successMsg').style.display = 'block';
+    document.getElementById('overlay').classList.add('show');
+    document.getElementById('formContent').style.display = 'block';
+    document.getElementById('successMsg').style.display = 'none';
 }
 
+function closeForm() {
+    document.getElementById('overlay').classList.remove('show');
+}
+
+function closeOnBg(e) {
+    if (e.target === document.getElementById('overlay')) closeForm();
+}
+
+function onSelectChange(sel) {
+    sel.classList.remove('placeholder-active');
+}
+
+// Валидация email
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// Валидация телефона (российский формат)
+function isValidPhone(tel) {
+    return /^[\d\+\-\(\)\s]{10,18}$/.test(tel);
+}
+
+function submitForm() {
+    const fio = document.getElementById('fio').value.trim();
+    const tel = document.getElementById('tel').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const event = document.getElementById('event').value;
+    
+    if (!fio) {
+        alert('Пожалуйста, введите ФИО');
+        return;
+    }
+    if (!tel || !isValidPhone(tel)) {
+        alert('Пожалуйста, введите корректный номер телефона');
+        return;
+    }
+    if (!email || !isValidEmail(email)) {
+        alert('Пожалуйста, введите корректный email');
+        return;
+    }
+    if (!event) {
+        alert('Пожалуйста, выберите тип мероприятия');
+        return;
+    }
+    
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+}
+
+// ===== КОРЗИНА =====
 function addToCart(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -56,6 +86,7 @@ function addToCart(e) {
     }
 }
 
+// ===== ГАЛЕРЕЯ КНИГИ =====
 const bookGallery = document.querySelector('.book-gallery');
 if (bookGallery) {
     bookGallery.addEventListener('wheel', function(e) {
@@ -66,6 +97,7 @@ if (bookGallery) {
     }, { passive: false });
 }
 
+// ===== ЗАСТАВКА =====
 const splashScreen = document.getElementById('splashScreen');
 const indexBody = document.querySelector('.index-page');
 
@@ -113,3 +145,74 @@ if (splashScreen && indexBody) {
         }, { passive: true });
     }
 }
+
+// ===== МОБИЛЬНОЕ МЕНЮ =====
+(function() {
+    const burger = document.getElementById('burgerBtn');
+    const dropdown = document.getElementById('mobileDropdown');
+    const overlay = document.getElementById('overlayMenu');
+    
+    if (!burger || !dropdown || !overlay) return;
+    
+    const links = dropdown.querySelectorAll('a');
+
+    function toggleMenu(forceState) {
+        const isOpen = (forceState !== undefined) ? forceState : !dropdown.classList.contains('open');
+        
+        if (isOpen) {
+            dropdown.classList.add('open');
+            overlay.classList.add('open');
+        } else {
+            dropdown.classList.remove('open');
+            overlay.classList.remove('open');
+        }
+    }
+
+    burger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    overlay.addEventListener('click', function() {
+        toggleMenu(false);
+    });
+
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            toggleMenu(false);
+        });
+    });
+
+    document.addEventListener('click', function(e) {
+        const target = e.target;
+        const isBurger = burger.contains(target);
+        const isDropdown = dropdown.contains(target);
+        const isOverlay = overlay.contains(target);
+        
+        if (!isBurger && !isDropdown && !isOverlay) {
+            if (dropdown.classList.contains('open')) {
+                toggleMenu(false);
+            }
+        }
+    });
+
+    dropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 414) {
+            if (dropdown.classList.contains('open')) {
+                toggleMenu(false);
+            }
+        }
+    });
+})();
+
+// ===== ИНИЦИАЛИЗАЦИЯ СОБЫТИЙ =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Кнопки "Зарегистрироваться" на странице мероприятий
+    document.querySelectorAll('.events-button[data-form="open"]').forEach(function(btn) {
+        btn.addEventListener('click', openForm);
+    });
+});
