@@ -122,39 +122,37 @@
     </div>
 </div>
 
-    <!-- ФОРМА РЕГИСТРАЦИИ -->
-    <div class="overlay" id="overlay" onclick="closeOnBg(event)">
-        <div class="form-box" id="formBox">
-            <button class="close-btn" onclick="closeForm()">×</button>
-            <div id="formContent">
-                <div class="form-title">Запишись на мероприятие</div>
-                <div class="form-field">
-                    <input type="text" placeholder="ФИО" id="fio">
-                </div>
-                <div class="form-field">
-                    <input type="tel" placeholder="Тел.:" id="tel">
-                </div>
-                <div class="form-field">
-                    <input type="email" placeholder="e-mail" id="email">
-                </div>
-                <div class="form-field">
-                    <select id="event" class="placeholder-active" onchange="onSelectChange(this)">
-                        <option value="" disabled selected>Тип мероприятия</option>
-                        <option value="masterclass">Мастер-класс по созданию игрушек</option>
-                        <option value="excursion">Экскурсия по фабрике</option>
-                        <option value="exhibition">Выставка новых коллекций</option>
-                        <option value="kids">Детский праздник</option>
-                    </select>
-                    <span class="chevron">&#8964;</span>
-                </div>
-                <button class="submit-btn" onclick="submitForm()">Отправить заявку</button>
+  <!-- ФОРМА РЕГИСТРАЦИИ -->
+<div class="overlay" id="overlay" onclick="closeOnBg(event)">
+    <div class="form-box" id="formBox">
+        <div id="formContent">
+            <div class="form-title">Запишись на мероприятие</div>
+            <div class="form-field">
+                <input type="text" placeholder="ФИО" id="fio">
             </div>
-            <div class="success-msg" id="successMsg">
-                <div class="check">✓</div>
-                <p>Заявка отправлена!<br>Мы свяжемся с вами.</p>
+            <div class="form-field">
+                <input type="tel" placeholder="Тел.:" id="tel">
             </div>
+            <div class="form-field">
+                <input type="email" placeholder="e-mail" id="email">
+            </div>
+            <div class="form-field">
+                <select id="event" class="placeholder-active" onchange="onSelectChange(this)">
+                    <option value="" disabled selected>Тип мероприятия</option>
+                    <option value="masterclass">Мастер-класс по созданию игрушек</option>
+                    <option value="excursion">Экскурсия по фабрике</option>
+                    <option value="exhibition">Выставка новых коллекций</option>
+                    <option value="kids">Детский праздник</option>
+                </select>
+            </div>
+            <button class="submit-btn" onclick="submitForm()">Отправить заявку</button>
+        </div>
+        <div class="success-msg" id="successMsg">
+            <div class="check">✓</div>
+            <p>Заявка отправлена!<br>Мы свяжемся с вами.</p>
         </div>
     </div>
+</div>
 
 <!-- ПОДВАЛ -->
 <footer class="footer">
